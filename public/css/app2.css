@@ -1,0 +1,103 @@
+.visinaCelije{
+    /*display: table-cell;*/
+    height: 100px;
+    max-height: 100px;
+    min-height: 100px;
+    vertical-align: top;
+    padding: 2px;
+    margin:0;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+.visinaCelije2{
+  /*display: table-cell;*/
+  height: 30px;
+  font-size: 0.8em;
+  vertical-align: middle;
+  padding: 2px;
+  margin:0px;
+  text-align: left;
+  border-top: 2px solid #fff;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+
+.celijaAlign{
+    vertical-align: middle;
+}
+
+/*.skriveno{
+    display: hidden;
+    color:yellow !important;   
+} */
+
+.kolegij{
+  margin:0;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 10px;
+}
+
+.headerTable{
+  font-size: 1.2em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 0px;
+  color:yellow;
+}
+.headerTable2{
+  width: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.visinaCelijeHeader{
+  padding-top: 20px;
+
+}
+
+.cellData2{
+  padding: 2px 10px 2px;
+  color:yellow;
+}
+
+.cellData{
+  text-align: center;
+  padding: 2px;
+  padding-top: 0px;
+  font-size: 1em;
+  font-size: 85%;
+  font-weight: normal;
+}
+
+
+
+@media only screen and (max-width: 1150px)  {
+  .cellData{
+    font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 1023px)  {
+  .cellData{
+    font-size: 100%;
+  }
+}
+
+@media only screen and (max-width: 900px)  {
+  .cellData{
+    font-size: 90%;
+  }
+}
+
+@media only screen and (max-width: 640px)  {
+  .cellData{
+    font-size: 85%;
+  }
+}
+  
