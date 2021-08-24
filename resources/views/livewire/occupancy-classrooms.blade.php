@@ -38,7 +38,7 @@
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
-                                    @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -51,7 +51,7 @@
                                     @endforeach
                                 </td>
                                 <td class="border">
-                                    @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 9 || ($rasporedJedanZima[3] < 9 && $rasporedJedanZima[4] > 9)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -64,7 +64,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 10 || ($rasporedJedanZima[3] < 10 && $rasporedJedanZima[4] > 10)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -77,7 +77,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 11 || ($rasporedJedanZima[3] < 11 && $rasporedJedanZima[4] > 11)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -90,7 +90,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 12 || ($rasporedJedanZima[3] < 12 && $rasporedJedanZima[4] > 12)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -103,7 +103,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 13 || ($rasporedJedanZima[3] < 13 && $rasporedJedanZima[4] > 13)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -116,7 +116,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 14 || ($rasporedJedanZima[3] < 14 && $rasporedJedanZima[4] > 14)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -129,7 +129,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 15 || ($rasporedJedanZima[3] < 15 && $rasporedJedanZima[4] > 15)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -142,7 +142,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 16 || ($rasporedJedanZima[3] < 16 && $rasporedJedanZima[4] > 16)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -155,7 +155,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 17 || ($rasporedJedanZima[3] < 17 && $rasporedJedanZima[4] > 17)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -168,7 +168,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 18 || ($rasporedJedanZima[3] < 18 && $rasporedJedanZima[4] > 18)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -181,7 +181,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 19 || ($rasporedJedanZima[3] < 19 && $rasporedJedanZima[4] > 19)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -230,7 +230,7 @@
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
-                                    @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -243,7 +243,7 @@
                                     @endforeach
                                 </td>
                                 <td class="border">
-                                    @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 9 || ($rasporedJedanZima[3] < 9 && $rasporedJedanZima[4] > 9)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -256,7 +256,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 10 || ($rasporedJedanZima[3] < 10 && $rasporedJedanZima[4] > 10)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -269,7 +269,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 11 || ($rasporedJedanZima[3] < 11 && $rasporedJedanZima[4] > 11)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -282,7 +282,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 12 || ($rasporedJedanZima[3] < 12 && $rasporedJedanZima[4] > 12)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -295,7 +295,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 13 || ($rasporedJedanZima[3] < 13 && $rasporedJedanZima[4] > 13)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -308,7 +308,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 14 || ($rasporedJedanZima[3] < 14 && $rasporedJedanZima[4] > 14)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -321,7 +321,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 15 || ($rasporedJedanZima[3] < 15 && $rasporedJedanZima[4] > 15)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -334,7 +334,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 16 || ($rasporedJedanZima[3] < 16 && $rasporedJedanZima[4] > 16)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -347,7 +347,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 17 || ($rasporedJedanZima[3] < 17 && $rasporedJedanZima[4] > 17)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -360,7 +360,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 18 || ($rasporedJedanZima[3] < 18 && $rasporedJedanZima[4] > 18)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -373,7 +373,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 19 || ($rasporedJedanZima[3] < 19 && $rasporedJedanZima[4] > 19)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -422,7 +422,7 @@
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
-                                    @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -435,7 +435,7 @@
                                     @endforeach
                                 </td>
                                 <td class="border">
-                                    @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 9 || ($rasporedJedanZima[3] < 9 && $rasporedJedanZima[4] > 9)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -448,7 +448,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 10 || ($rasporedJedanZima[3] < 10 && $rasporedJedanZima[4] > 10)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -461,7 +461,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 11 || ($rasporedJedanZima[3] < 11 && $rasporedJedanZima[4] > 11)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -474,7 +474,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 12 || ($rasporedJedanZima[3] < 12 && $rasporedJedanZima[4] > 12)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -487,7 +487,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 13 || ($rasporedJedanZima[3] < 13 && $rasporedJedanZima[4] > 13)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -500,7 +500,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 14 || ($rasporedJedanZima[3] < 14 && $rasporedJedanZima[4] > 14)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -513,7 +513,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 15 || ($rasporedJedanZima[3] < 15 && $rasporedJedanZima[4] > 15)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -526,7 +526,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 16 || ($rasporedJedanZima[3] < 16 && $rasporedJedanZima[4] > 16)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -539,7 +539,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 17 || ($rasporedJedanZima[3] < 17 && $rasporedJedanZima[4] > 17)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -552,7 +552,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 18 || ($rasporedJedanZima[3] < 18 && $rasporedJedanZima[4] > 18)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -565,7 +565,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 19 || ($rasporedJedanZima[3] < 19 && $rasporedJedanZima[4] > 19)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -614,7 +614,7 @@
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
-                                    @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -627,7 +627,7 @@
                                     @endforeach
                                 </td>
                                 <td class="border">
-                                    @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 9 || ($rasporedJedanZima[3] < 9 && $rasporedJedanZima[4] > 9)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -640,7 +640,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 10 || ($rasporedJedanZima[3] < 10 && $rasporedJedanZima[4] > 10)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -653,7 +653,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 11 || ($rasporedJedanZima[3] < 11 && $rasporedJedanZima[4] > 11)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -666,7 +666,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 12 || ($rasporedJedanZima[3] < 12 && $rasporedJedanZima[4] > 12)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -679,7 +679,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 13 || ($rasporedJedanZima[3] < 13 && $rasporedJedanZima[4] > 13)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -692,7 +692,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 14 || ($rasporedJedanZima[3] < 14 && $rasporedJedanZima[4] > 14)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -705,7 +705,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 15 || ($rasporedJedanZima[3] < 15 && $rasporedJedanZima[4] > 15)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -718,7 +718,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 16 || ($rasporedJedanZima[3] < 16 && $rasporedJedanZima[4] > 16)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -731,7 +731,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 17 || ($rasporedJedanZima[3] < 17 && $rasporedJedanZima[4] > 17)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -744,7 +744,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 18 || ($rasporedJedanZima[3] < 18 && $rasporedJedanZima[4] > 18)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -757,7 +757,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 19 || ($rasporedJedanZima[3] < 19 && $rasporedJedanZima[4] > 19)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -806,7 +806,7 @@
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
-                                    @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -819,7 +819,7 @@
                                     @endforeach
                                 </td>
                                 <td class="border">
-                                    @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 9 || ($rasporedJedanZima[3] < 9 && $rasporedJedanZima[4] > 9)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -832,7 +832,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 10 || ($rasporedJedanZima[3] < 10 && $rasporedJedanZima[4] > 10)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -845,7 +845,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 11 || ($rasporedJedanZima[3] < 11 && $rasporedJedanZima[4] > 11)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -858,7 +858,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 12 || ($rasporedJedanZima[3] < 12 && $rasporedJedanZima[4] > 12)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -871,7 +871,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 13 || ($rasporedJedanZima[3] < 13 && $rasporedJedanZima[4] > 13)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -884,7 +884,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 14 || ($rasporedJedanZima[3] < 14 && $rasporedJedanZima[4] > 14)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -897,7 +897,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 15 || ($rasporedJedanZima[3] < 15 && $rasporedJedanZima[4] > 15)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -910,7 +910,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 16 || ($rasporedJedanZima[3] < 16 && $rasporedJedanZima[4] > 16)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -923,7 +923,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 17 || ($rasporedJedanZima[3] < 17 && $rasporedJedanZima[4] > 17)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -936,7 +936,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 18 || ($rasporedJedanZima[3] < 18 && $rasporedJedanZima[4] > 18)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -949,7 +949,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedZima'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 19 || ($rasporedJedanZima[3] < 19 && $rasporedJedanZima[4] > 19)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1008,7 +1008,7 @@
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
-                                    @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1021,7 +1021,7 @@
                                     @endforeach
                                 </td>
                                 <td class="border">
-                                    @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 9 || ($rasporedJedanZima[3] < 9 && $rasporedJedanZima[4] > 9)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1034,7 +1034,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 10 || ($rasporedJedanZima[3] < 10 && $rasporedJedanZima[4] > 10)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1047,7 +1047,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 11 || ($rasporedJedanZima[3] < 11 && $rasporedJedanZima[4] > 11)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1060,7 +1060,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 12 || ($rasporedJedanZima[3] < 12 && $rasporedJedanZima[4] > 12)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1073,7 +1073,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 13 || ($rasporedJedanZima[3] < 13 && $rasporedJedanZima[4] > 13)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1086,7 +1086,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 14 || ($rasporedJedanZima[3] < 14 && $rasporedJedanZima[4] > 14)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1099,7 +1099,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 15 || ($rasporedJedanZima[3] < 15 && $rasporedJedanZima[4] > 15)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1112,7 +1112,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 16 || ($rasporedJedanZima[3] < 16 && $rasporedJedanZima[4] > 16)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1125,7 +1125,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 17 || ($rasporedJedanZima[3] < 17 && $rasporedJedanZima[4] > 17)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1138,7 +1138,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 18 || ($rasporedJedanZima[3] < 18 && $rasporedJedanZima[4] > 18)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1151,7 +1151,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 19 || ($rasporedJedanZima[3] < 19 && $rasporedJedanZima[4] > 19)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1200,7 +1200,7 @@
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
-                                    @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1213,7 +1213,7 @@
                                     @endforeach
                                 </td>
                                 <td class="border">
-                                    @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 9 || ($rasporedJedanZima[3] < 9 && $rasporedJedanZima[4] > 9)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1226,7 +1226,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 10 || ($rasporedJedanZima[3] < 10 && $rasporedJedanZima[4] > 10)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1239,7 +1239,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 11 || ($rasporedJedanZima[3] < 11 && $rasporedJedanZima[4] > 11)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1252,7 +1252,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 12 || ($rasporedJedanZima[3] < 12 && $rasporedJedanZima[4] > 12)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1265,7 +1265,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 13 || ($rasporedJedanZima[3] < 13 && $rasporedJedanZima[4] > 13)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1278,7 +1278,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 14 || ($rasporedJedanZima[3] < 14 && $rasporedJedanZima[4] > 14)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1291,7 +1291,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 15 || ($rasporedJedanZima[3] < 15 && $rasporedJedanZima[4] > 15)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1304,7 +1304,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 16 || ($rasporedJedanZima[3] < 16 && $rasporedJedanZima[4] > 16)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1317,7 +1317,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 17 || ($rasporedJedanZima[3] < 17 && $rasporedJedanZima[4] > 17)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1330,7 +1330,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 18 || ($rasporedJedanZima[3] < 18 && $rasporedJedanZima[4] > 18)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1343,7 +1343,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 19 || ($rasporedJedanZima[3] < 19 && $rasporedJedanZima[4] > 19)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1392,7 +1392,7 @@
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
-                                    @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1405,7 +1405,7 @@
                                     @endforeach
                                 </td>
                                 <td class="border">
-                                    @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 9 || ($rasporedJedanZima[3] < 9 && $rasporedJedanZima[4] > 9)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1418,7 +1418,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 10 || ($rasporedJedanZima[3] < 10 && $rasporedJedanZima[4] > 10)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1431,7 +1431,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 11 || ($rasporedJedanZima[3] < 11 && $rasporedJedanZima[4] > 11)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1444,7 +1444,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 12 || ($rasporedJedanZima[3] < 12 && $rasporedJedanZima[4] > 12)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1457,7 +1457,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 13 || ($rasporedJedanZima[3] < 13 && $rasporedJedanZima[4] > 13)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1470,7 +1470,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 14 || ($rasporedJedanZima[3] < 14 && $rasporedJedanZima[4] > 14)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1483,7 +1483,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 15 || ($rasporedJedanZima[3] < 15 && $rasporedJedanZima[4] > 15)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1496,7 +1496,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 16 || ($rasporedJedanZima[3] < 16 && $rasporedJedanZima[4] > 16)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1509,7 +1509,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 17 || ($rasporedJedanZima[3] < 17 && $rasporedJedanZima[4] > 17)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1522,7 +1522,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 18 || ($rasporedJedanZima[3] < 18 && $rasporedJedanZima[4] > 18)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1535,7 +1535,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 19 || ($rasporedJedanZima[3] < 19 && $rasporedJedanZima[4] > 19)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1584,7 +1584,7 @@
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
-                                    @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1597,7 +1597,7 @@
                                     @endforeach
                                 </td>
                                 <td class="border">
-                                    @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 9 || ($rasporedJedanZima[3] < 9 && $rasporedJedanZima[4] > 9)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1610,7 +1610,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 10 || ($rasporedJedanZima[3] < 10 && $rasporedJedanZima[4] > 10)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1623,7 +1623,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 11 || ($rasporedJedanZima[3] < 11 && $rasporedJedanZima[4] > 11)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1636,7 +1636,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 12 || ($rasporedJedanZima[3] < 12 && $rasporedJedanZima[4] > 12)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1649,7 +1649,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 13 || ($rasporedJedanZima[3] < 13 && $rasporedJedanZima[4] > 13)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1662,7 +1662,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 14 || ($rasporedJedanZima[3] < 14 && $rasporedJedanZima[4] > 14)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1675,7 +1675,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 15 || ($rasporedJedanZima[3] < 15 && $rasporedJedanZima[4] > 15)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1688,7 +1688,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 16 || ($rasporedJedanZima[3] < 16 && $rasporedJedanZima[4] > 16)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1701,7 +1701,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 17 || ($rasporedJedanZima[3] < 17 && $rasporedJedanZima[4] > 17)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1714,7 +1714,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 18 || ($rasporedJedanZima[3] < 18 && $rasporedJedanZima[4] > 18)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1727,7 +1727,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 19 || ($rasporedJedanZima[3] < 19 && $rasporedJedanZima[4] > 19)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1776,7 +1776,7 @@
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
-                                    @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1789,7 +1789,7 @@
                                     @endforeach
                                 </td>
                                 <td class="border">
-                                    @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                    @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 9 || ($rasporedJedanZima[3] < 9 && $rasporedJedanZima[4] > 9)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1802,7 +1802,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 10 || ($rasporedJedanZima[3] < 10 && $rasporedJedanZima[4] > 10)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1815,7 +1815,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 11 || ($rasporedJedanZima[3] < 11 && $rasporedJedanZima[4] > 11)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1828,7 +1828,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 12 || ($rasporedJedanZima[3] < 12 && $rasporedJedanZima[4] > 12)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1841,7 +1841,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 13 || ($rasporedJedanZima[3] < 13 && $rasporedJedanZima[4] > 13)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1854,7 +1854,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 14 || ($rasporedJedanZima[3] < 14 && $rasporedJedanZima[4] > 14)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1867,7 +1867,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 15 || ($rasporedJedanZima[3] < 15 && $rasporedJedanZima[4] > 15)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1880,7 +1880,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 16 || ($rasporedJedanZima[3] < 16 && $rasporedJedanZima[4] > 16)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1893,7 +1893,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 17 || ($rasporedJedanZima[3] < 17 && $rasporedJedanZima[4] > 17)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1906,7 +1906,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 18 || ($rasporedJedanZima[3] < 18 && $rasporedJedanZima[4] > 18)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">
@@ -1919,7 +1919,7 @@
                                         @endforeach
                                     </td>
                                     <td class="border">
-                                        @foreach(${'rasporedLjeto'.$ucionica[0]} as $rasporedJedanZima)
+                                        @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 19 || ($rasporedJedanZima[3] < 19 && $rasporedJedanZima[4] > 19)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
                                             {{$rasporedJedanZima[0]}}
                                             @if (Auth::user()->is_admin === 1) <a class="inline-flex items-center justify-center cursor-pointer" style="text-decoration:none;" target="_blank" href="{{ url('terms/edit/' . $rasporedJedanZima[1] . '') }}">

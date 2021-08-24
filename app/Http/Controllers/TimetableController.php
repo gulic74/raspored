@@ -80,11 +80,49 @@ class TimetableController extends Controller
             }
         }
 
-        //$z = ['me','you', 'he'];
-        //array_push($z, 'she', 'it');
-        //print_r($z);
+        $podaciRaspored = [];
+        //return $request->input('smjer'); //BS, EITP, LMPP, NTPP, TOP
 
-        return view('timetable.index')->with('raspored', $raspored);
+        $smjer = $request->input('smjer'); 
+        $studij = $request->input('studij');
+
+        if($smjer === "BS"){            
+            if($studij === "DIPL"){
+                $smjer = "BRODOSTROJARSTVO I TEHNOLOGIJA POMORSKOG POMETA";
+            } else {
+                $smjer = "BRODOSTROJARSTVO";
+            }
+        } else if($smjer === "EITP"){
+            $smjer = "ELEKTRONIČKE I INFORMATIČKE TEHNOLOGIJE U POMORSTVU";
+        } else if($smjer === "LMPP"){
+            $smjer = "LOGISTIKA I MENADŽMENT U POMORSTVU I PROMETU";
+        } else if($smjer === "NTPP"){
+            $smjer = "NAUTIKA I TEHNOLOGIJA POMORSKOG PROMETA";
+        } else {
+            //TOP
+            $smjer = "TEHNOLOGIJA I ORGANIZACIJA PROMETA";
+        }
+
+        if($studij === "DIPL"){
+            $studij = "DIPLOMSKI SVEUČILIŠNI STUDIJ - " . $smjer;
+        } else {
+            $studij = "PREDDIPLOMSKI SVEUČILIŠNI STUDIJ - " . $smjer;
+        }
+        array_push($podaciRaspored, $studij);
+
+        $godinaTekst = "";
+        if($godina === '3'){
+            $godinaTekst = "TREĆA STUDIJSKA GODINA";
+        } else if($godina === '2'){
+            $godinaTekst = "DRUGA STUDIJSKA GODINA";
+        } else {
+            $godinaTekst = "PRVA STUDIJSKA GODINA";
+        }
+        array_push($podaciRaspored, $godinaTekst);
+        array_push($podaciRaspored, ($request->input('semestar') . " SEMESTAR"));
+
+        //return $podaciRaspored;
+        return view('timetable.index')->with('raspored', $raspored)->with('podaciRaspored', $podaciRaspored);
         //return "bravo";
         //$request->input('zaposlenje_broj'); 
     }
@@ -160,7 +198,48 @@ class TimetableController extends Controller
         //array_push($z, 'she', 'it');
         //print_r($z);
 
-        return view('timetable.indexstudent')->with('raspored', $raspored);
+        $podaciRaspored = [];
+        //return $request->input('smjer'); //BS, EITP, LMPP, NTPP, TOP
+
+        $smjer = $request->input('smjer'); 
+        $studij = $request->input('studij');
+
+        if($smjer === "BS"){            
+            if($studij === "DIPL"){
+                $smjer = "BRODOSTROJARSTVO I TEHNOLOGIJA POMORSKOG POMETA";
+            } else {
+                $smjer = "BRODOSTROJARSTVO";
+            }
+        } else if($smjer === "EITP"){
+            $smjer = "ELEKTRONIČKE I INFORMATIČKE TEHNOLOGIJE U POMORSTVU";
+        } else if($smjer === "LMPP"){
+            $smjer = "LOGISTIKA I MENADŽMENT U POMORSTVU I PROMETU";
+        } else if($smjer === "NTPP"){
+            $smjer = "NAUTIKA I TEHNOLOGIJA POMORSKOG PROMETA";
+        } else {
+            //TOP
+            $smjer = "TEHNOLOGIJA I ORGANIZACIJA PROMETA";
+        }
+
+        if($studij === "DIPL"){
+            $studij = "DIPLOMSKI SVEUČILIŠNI STUDIJ - " . $smjer;
+        } else {
+            $studij = "PREDDIPLOMSKI SVEUČILIŠNI STUDIJ - " . $smjer;
+        }
+        array_push($podaciRaspored, $studij);
+
+        $godinaTekst = "";
+        if($godina === '3'){
+            $godinaTekst = "TREĆA STUDIJSKA GODINA";
+        } else if($godina === '2'){
+            $godinaTekst = "DRUGA STUDIJSKA GODINA";
+        } else {
+            $godinaTekst = "PRVA STUDIJSKA GODINA";
+        }
+        array_push($podaciRaspored, $godinaTekst);
+        array_push($podaciRaspored, ($request->input('semestar') . " SEMESTAR"));
+
+        return view('timetable.indexstudent')->with('raspored', $raspored)->with('podaciRaspored', $podaciRaspored);
         //return "bravo";
         //$request->input('zaposlenje_broj'); 
     }

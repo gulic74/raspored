@@ -5,8 +5,13 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-12xl mx-auto sm:px-6 lg:px-8">
+    <div class="py-12 pt-4">
+        <div class="max-w-12xl mx-auto sm:px-6 lg:px-8 text-lg">
+            <div class="mb-6 text-white font-bold p-1">
+                {{$podaciRaspored[0]}}<hr/>
+                <span class="text-base font-normal">{{$podaciRaspored[1]}}</span><br/>
+                <span class="text-base font-normal">{{$podaciRaspored[2]}}</span>
+            </div>
             <div class="bg-transparent overflow-hidden shadow-xl sm:rounded-lg border-2 border-white" style="background-color:rgba(255,255,255,0.25);">
                 <div class="grid grid-cols-6">
                     <!--<div class="col-span-1 md:col-span-3 lg:col-span-6"></div>-->

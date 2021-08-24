@@ -105,14 +105,14 @@ class OccupancyClassrooms extends Component
                 ->get();
 
         foreach ($this->ucionice as $ucionica){
-            $this->{'rasporedZima'.$ucionica[0]} = [];
+            $this->{"rasporedZima".$ucionica[0]} = [];
         }
 
         foreach ($this->ucionice as $ucionica){     
             foreach ($termini as $termin){
                 if($termin->ucionica === $ucionica[0]){
                     $nasao = false;
-                    foreach($this->{'rasporedZima'.$ucionica[0]} as $rasporedJedan){
+                    foreach($this->{"rasporedZima".$ucionica[0]} as $rasporedJedan){
                         if($rasporedJedan[1] === $termin->id){
                             $nasao = true; 
                         }
@@ -132,7 +132,7 @@ class OccupancyClassrooms extends Component
                                 $jednaStavka[0] = $termin->smjer[0] . ($termin->godina + 3);
                             }
                         }                
-                        array_push($this->{'rasporedZima'.$ucionica[0]}, $jednaStavka);
+                        array_push($this->{"rasporedZima".$ucionica[0]}, $jednaStavka);
                     } 
                 }           
             }
@@ -150,14 +150,14 @@ class OccupancyClassrooms extends Component
                 ->get();
 
         foreach ($this->ucionice as $ucionica){
-            $this->{'rasporedLjeto'.$ucionica[0]} = [];
+            $this->{"rasporedLjeto".$ucionica[0]} = [];
         }
         
         foreach ($this->ucionice as $ucionica){        
             foreach ($terminiLjeto as $termin){
                 if($termin->ucionica === $ucionica[0]){
                     $nasao = false;
-                    foreach($this->{'rasporedLjeto'.$ucionica[0]} as $rasporedJedan){
+                    foreach($this->{"rasporedLjeto".$ucionica[0]} as $rasporedJedan){
                         if($rasporedJedan[1] === $termin->id){
                             $nasao = true; 
                         }
@@ -177,7 +177,7 @@ class OccupancyClassrooms extends Component
                                 $jednaStavka[0] = $termin->smjer[0] . ($termin->godina + 3);
                             }
                         }                
-                        array_push($this->{'rasporedLjeto'.$ucionica[0]}, $jednaStavka);
+                        array_push($this->{"rasporedLjeto".$ucionica[0]}, $jednaStavka);
                     }
                 }           
             }

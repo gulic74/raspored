@@ -55,8 +55,7 @@ return [
     */
 
     'asset_url' => null,
-    //'asset_url'  =>  env('APP_URL'),
-    //'asset_base_url' => 'vendor/livewire',
+    //'asset_url' => '/raspored/public/index.php',
 
     /*
     |--------------------------------------------------------------------------
