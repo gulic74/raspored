@@ -1,11 +1,6 @@
 <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
-    <div class="grid grid-cols-4">
-        <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1">
-            <x-jet-application-logo class="block h-10 w-auto float-left" />
-        </div>
-        <div class="col-span-3 sm:col-span-3 md:col-span-3 lg:col-span-3 text-xl text-left ml-3 mt-6">
-            Izaberite raspored koji želite pregledati:
-        </div>
+    <div class="text-left mt-6 font-bold text-xl md:text-3xl">
+        Izaberite raspored koji želite pregledati:
     </div>
 
     <div class="mt-8 text-xl">

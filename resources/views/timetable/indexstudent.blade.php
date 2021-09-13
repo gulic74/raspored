@@ -5,17 +5,27 @@
             <img style="min-width:50px; max-width:50px; padding-right:5px; float:left; margin-top:-10px; margin-bottom:0px;" src="{{ asset('images/logo3.png') }}"/>
         @endif
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Raspored sati') }}
+            {{ __('Raspored sati') }} &nbsp;&nbsp;&nbsp; 
+            @if(isset($podaciRaspored))
+                <a class="bg-green-500 hover:bg-green-700 text-white py-2 px-3 rounded-lg text-sm" style="text-decoration:none;" href="{{ route('timetablestudentPDF', ['smjer' => $podaciRaspored[0], 'studij' => $podaciRaspored[1], 'godina' => $podaciRaspored[2], 'semestar' => $podaciRaspored[3]]) }}">Preuzmi PDF</a>
+                @auth
+                    @if (Auth::user()->is_admin === 1)
+                        <a class="bg-green-500 hover:bg-green-700 text-white py-2 px-3 rounded-lg text-sm" style="text-decoration:none;" href="{{ route('timetablegeneratePDF', ['smjer' => $podaciRaspored[0], 'studij' => $podaciRaspored[1], 'godina' => $podaciRaspored[2], 'semestar' => $podaciRaspored[3]]) }}">Generiraj PDF</a>
+                    @endif
+                @endauth
+            @endif
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-12xl mx-auto sm:px-6 lg:px-8">
-            <div class="mb-6 text-white font-bold p-1">
-                {{$podaciRaspored[0]}}<hr/>
-                <span class="text-base font-normal">{{$podaciRaspored[1]}}</span><br/>
-                <span class="text-base font-normal">{{$podaciRaspored[2]}}</span>
-            </div>
+            @if(isset($podaciRaspored))
+                <div class="mb-6 text-white font-bold p-1">
+                    {{$podaciRaspored[4]}}<hr/>
+                    <span class="text-base font-normal">{{$podaciRaspored[5]}}</span><br/>
+                    <span class="text-base font-normal">{{$podaciRaspored[6]}}</span>
+                </div>
+            @endif
             <div class="bg-transparent overflow-hidden shadow-xl sm:rounded-lg border-2 border-white" style="background-color:rgba(255,255,255,0.25);">
                 <div class="grid grid-cols-6">
                     <!--<div class="col-span-1 md:col-span-3 lg:col-span-6"></div>-->

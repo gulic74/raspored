@@ -30,7 +30,11 @@ Route::middleware('isadmin')->group(function(){
     Route::get('/timetableadmin/{id}', [TimetableController::class, 'indexadmin'])->name('timetable.indexadmin');
     
     Route::get('/classrooms/create', [ClassroomsController::class, 'create'])->name('classrooms.create'); //----
-    Route::get('/classrooms/edit/{id}', [ClassroomsController::class, 'edit'])->name('classrooms.edit'); //----
+    Route::get('/classrooms/edit/{id}', [ClassroomsController::class, 'edit'])->name('classrooms.edit'); //----    
+    Route::post('/classrooms/show/{id}/csv', [ClassroomsController::class, 'csv'])->name('classrooms.csv');
+    Route::post('/classrooms/show/{id}/pdf', [ClassroomsController::class, 'pdf'])->name('classrooms.pdf');
+    
+    Route::get('/timetablegeneratePDF', [TimetableController::class, 'timetablegeneratePDF'])->name('timetablegeneratePDF');
      //----
     Route::get('/courses', [CoursesController::class, 'index'])->name('courses.index');
     Route::get('/courses/create', [CoursesController::class, 'create'])->name('courses.create');
@@ -59,3 +63,4 @@ Route::middleware('auth')->group(function(){
 
 //Route::get('timetable', [TimetableController::class, 'index'])->name('timetable.index');
 Route::post('/timetablestudent', [TimetableController::class, 'indexstudent'])->name('timetablestudent');
+Route::get('/timetablestudentPDF', [TimetableController::class, 'indexstudentPDF'])->name('timetablestudentPDF');

@@ -11,6 +11,7 @@ use App\Models\Term;
 use App\Models\UserTerm;
 use App\Models\ClassroomTerm;
 use App\Models\CourseTerm;
+use Illuminate\Support\Str;
 
 use Livewire\Component;
 
@@ -84,10 +85,12 @@ class EditTerms extends Component
         $this->tekstPoruke = [];
         $this->kolizija = 0;
 
-        $profesori_id = explode("-", $termin[8]);
-        foreach ($profesori_id as $profesor_id){
-            $userTrenutni = User::find($profesor_id);
-            $this->odabirProfesor[$userTrenutni->id] = $userTrenutni->name . " " . $userTrenutni->surname;
+        if(Str::contains($termin[8], '-') || Str::of($termin[8])->length() > 0){
+            $profesori_id = explode("-", $termin[8]);
+            foreach ($profesori_id as $profesor_id){
+                $userTrenutni = User::find($profesor_id);
+                $this->odabirProfesor[$userTrenutni->id] = $userTrenutni->name . " " . $userTrenutni->surname;
+            }
         }
         $ucionice_id = explode("-", $termin[9]);
         foreach ($ucionice_id as $ucionica_id){
@@ -218,13 +221,11 @@ class EditTerms extends Component
                 $courseTrenutni = Course::find($key);
 
                 $terminiRaspored = DB::table('terms')
-                    ->join('user_term', 'terms.id', '=', 'user_term.term_id')
-                    ->join('users', 'users.id', '=', 'user_term.user_id')
                     ->join('course_term', 'terms.id', '=', 'course_term.term_id')
                     ->join('courses', 'courses.id', '=', 'course_term.course_id')
                     ->join('classroom_term', 'terms.id', '=', 'classroom_term.term_id')
                     ->join('classrooms', 'classrooms.id', '=', 'classroom_term.classroom_id')
-                    ->select('terms.tip', 'terms.grupa', 'terms.dan', 'terms.pocetak', 'terms.kraj', 'terms.semestar', 'terms.aktivan', 'terms.komentar', 'terms.napomena', 'classrooms.id as ucionica_id', 'classrooms.ime as ucionica', 'courses.id as kolegij_id', 'courses.ime', 'courses.smjer', 'terms.id', 'users.id as profesor_id', 'users.name', 'users.surname')
+                    ->select('terms.tip', 'terms.grupa', 'terms.dan', 'terms.pocetak', 'terms.kraj', 'terms.semestar', 'terms.aktivan', 'terms.komentar', 'terms.napomena', 'classrooms.id as ucionica_id', 'classrooms.ime as ucionica', 'courses.id as kolegij_id', 'courses.ime', 'courses.smjer', 'terms.id')
                     ->where('terms.id', "!=", $this->termin[1])
                     ->where('terms.dan', $this->dan)
                     ->where('terms.semestar', $this->semestar)
@@ -255,13 +256,11 @@ class EditTerms extends Component
         if($this->ignoreUcionica == 0){
             foreach($this->odabirUcionica as $key => $value) {
                 $terminiUcionica = DB::table('terms')
-                    ->join('user_term', 'terms.id', '=', 'user_term.term_id')
-                    ->join('users', 'users.id', '=', 'user_term.user_id')
                     ->join('course_term', 'terms.id', '=', 'course_term.term_id')
                     ->join('courses', 'courses.id', '=', 'course_term.course_id')
                     ->join('classroom_term', 'terms.id', '=', 'classroom_term.term_id')
                     ->join('classrooms', 'classrooms.id', '=', 'classroom_term.classroom_id')
-                    ->select('terms.tip', 'terms.grupa', 'terms.dan', 'terms.pocetak', 'terms.kraj', 'terms.semestar', 'terms.aktivan', 'terms.komentar', 'terms.napomena', 'classrooms.id as ucionica_id', 'classrooms.ime as ucionica', 'courses.id as kolegij_id', 'courses.ime', 'courses.smjer', 'terms.id', 'users.id as profesor_id', 'users.name', 'users.surname')
+                    ->select('terms.tip', 'terms.grupa', 'terms.dan', 'terms.pocetak', 'terms.kraj', 'terms.semestar', 'terms.aktivan', 'terms.komentar', 'terms.napomena', 'classrooms.id as ucionica_id', 'classrooms.ime as ucionica', 'courses.id as kolegij_id', 'courses.ime', 'courses.smjer', 'terms.id')
                     ->where('classrooms.id', $key)
                     ->where('terms.id', "!=", $this->termin[1])
                     ->where('terms.dan', $this->dan)
@@ -332,13 +331,11 @@ class EditTerms extends Component
                         $courseTrenutni = Course::find($key);
 
                         $terminiRaspored = DB::table('terms')
-                            ->join('user_term', 'terms.id', '=', 'user_term.term_id')
-                            ->join('users', 'users.id', '=', 'user_term.user_id')
                             ->join('course_term', 'terms.id', '=', 'course_term.term_id')
                             ->join('courses', 'courses.id', '=', 'course_term.course_id')
                             ->join('classroom_term', 'terms.id', '=', 'classroom_term.term_id')
                             ->join('classrooms', 'classrooms.id', '=', 'classroom_term.classroom_id')
-                            ->select('terms.tip', 'terms.grupa', 'terms.dan', 'terms.pocetak', 'terms.kraj', 'terms.semestar', 'terms.aktivan', 'terms.komentar', 'terms.napomena', 'classrooms.id as ucionica_id', 'classrooms.ime as ucionica', 'courses.id as kolegij_id', 'courses.ime', 'courses.smjer', 'terms.id', 'users.id as profesor_id', 'users.name', 'users.surname')
+                            ->select('terms.tip', 'terms.grupa', 'terms.dan', 'terms.pocetak', 'terms.kraj', 'terms.semestar', 'terms.aktivan', 'terms.komentar', 'terms.napomena', 'classrooms.id as ucionica_id', 'classrooms.ime as ucionica', 'courses.id as kolegij_id', 'courses.ime', 'courses.smjer', 'terms.id')
                             ->where('terms.id', "!=", $this->termin[1])
                             ->where('terms.dan', $this->dan)
                             ->where('terms.semestar', $this->semestar)
@@ -369,13 +366,11 @@ class EditTerms extends Component
                 if($this->ignoreUcionica == 0){
                     foreach($this->odabirUcionica as $key => $value) {
                         $terminiUcionica = DB::table('terms')
-                            ->join('user_term', 'terms.id', '=', 'user_term.term_id')
-                            ->join('users', 'users.id', '=', 'user_term.user_id')
                             ->join('course_term', 'terms.id', '=', 'course_term.term_id')
                             ->join('courses', 'courses.id', '=', 'course_term.course_id')
                             ->join('classroom_term', 'terms.id', '=', 'classroom_term.term_id')
                             ->join('classrooms', 'classrooms.id', '=', 'classroom_term.classroom_id')
-                            ->select('terms.tip', 'terms.grupa', 'terms.dan', 'terms.pocetak', 'terms.kraj', 'terms.semestar', 'terms.aktivan', 'terms.komentar', 'terms.napomena', 'classrooms.id as ucionica_id', 'classrooms.ime as ucionica', 'courses.id as kolegij_id', 'courses.ime', 'courses.smjer', 'terms.id', 'users.id as profesor_id', 'users.name', 'users.surname')
+                            ->select('terms.tip', 'terms.grupa', 'terms.dan', 'terms.pocetak', 'terms.kraj', 'terms.semestar', 'terms.aktivan', 'terms.komentar', 'terms.napomena', 'classrooms.id as ucionica_id', 'classrooms.ime as ucionica', 'courses.id as kolegij_id', 'courses.ime', 'courses.smjer', 'terms.id')
                             ->where('classrooms.id', $key)
                             ->where('terms.id', "!=", $this->termin[1])
                             ->where('terms.dan', $this->dan)

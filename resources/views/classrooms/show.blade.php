@@ -8,7 +8,8 @@
     <x-slot name="slot">
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">                 
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                                    
                     <div style="margin:15px;">
                         <div class="grid grid-cols-4 mb-2">
                             <div class="mt-4 col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-1">
@@ -2011,8 +2012,64 @@
                                 </tbody>
                               </table>
                             </div>
-                        </div>                        
-                    </div>
+                        </div>
+                        @if (Auth::user()->is_admin === 1) 
+                          <hr/>
+                          <h1 class="mt-8 text-2xl font-bold">Opterećenje učionice u .csv formatu</h1>
+                          <x-jet-validation-errors  /> 
+                          <form class="bg-white px-8 pt-6 pb-8 mb-4 mt-0 pl-0" method="POST" action="{{ url( 'classrooms/show/' . $osobniPodaci[0] . '/csv' ) }}">
+                            @csrf
+                            <div class="grid grid-cols-4">
+                              <div class="ml-0 mt-0 mb-4 mr-12 col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-1">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="datumPocetka">
+                                  Početak nastave*
+                                </label>
+                                <input type="date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="datumPocetka" name="datumPocetka">
+                                <p class="text-gray-500 text-xs italic mt-3">*Ponedjeljak kad započinje semestar</p>
+                              </div>
+                              <div class="ml-0 mt-0 mb-6 mr-12 col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-1">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="datumZavrsetka">
+                                  Kraj nastave*
+                                </label>
+                                <input type="date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="datumZavrsetka" name="datumZavrsetka">
+                                <p class="text-gray-500 text-xs italic mt-3">*Petak kad završava semestar</p>
+                              </div>
+                              <div class="ml-0 mt-0 mb-6 mr-12 col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-1">
+                                <x-jet-label for="semestar" value="Semestar" class="block text-gray-700 text-sm font-bold mb-2"/>
+                                <select name="semestar" id="semestar" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                    <option value="ZIMSKI">Zimski</option>
+                                    <option value="LJETNI">Ljetni</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="flex items-center justify-between ml-0">
+                              <button class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                                Opterećenje .csv
+                              </button>
+                            </div>
+                          </form>
+                          <hr/>
+                          <h1 class="mt-8 text-2xl font-bold">Opterećenje učionice u PDF formatu za vrata</h1>
+                          <form class="bg-white px-8 pt-6 pb-8 mb-4 mt-0 pl-0" method="POST" action="{{ url( 'classrooms/show/' . $osobniPodaci[0] . '/pdf' ) }}">
+                            @csrf
+                            <div class="grid grid-cols-4">
+                              <div class="ml-0 mt-0 mb-6 mr-12 col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-1">
+                                <x-jet-label for="semestar" value="Semestar" class="block text-gray-700 text-sm font-bold mb-2"/>
+                                <select name="semestarPDF" id="semestarPDF" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                    <option value="ZIMSKI">Zimski</option>
+                                    <option value="LJETNI">Ljetni</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="flex items-center justify-between ml-0">
+                              <button class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                                Opterećenje PDF
+                              </button>
+                            </div>
+                          </form>
+                      @endif
+
+                    </div>                    
                 </div> 
             </div>
         </div>
