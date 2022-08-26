@@ -14,7 +14,7 @@
     </x-slot>
 
     <div class="py-12 pt-4">
-        <div class="max-w-12xl mx-auto sm:px-6 lg:px-8 text-lg">
+        <div class="max-w-12xl mx-auto sm:px-6 lg:px-8">
             <div class="mb-6 text-white font-bold p-1">
                 {{$podaciRaspored[4]}}<hr/>
                 <span class="text-base font-normal">{{$podaciRaspored[5]}}</span><br/>

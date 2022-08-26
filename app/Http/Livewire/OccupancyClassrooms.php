@@ -43,6 +43,7 @@ class OccupancyClassrooms extends Component
     public $rasporedZimaTK=[];
     public $rasporedZimaIK=[];
     public $rasporedZimaStr_Lab=[];
+    public $rasporedZimaTorpedo=[];
     public $rasporedLjeto107=[];
     public $rasporedLjeto108=[];
     public $rasporedLjeto207=[];
@@ -77,6 +78,7 @@ class OccupancyClassrooms extends Component
     public $rasporedLjetoTK=[];
     public $rasporedLjetoIK=[];
     public $rasporedLjetoStr_Lab=[];
+    public $rasporedLjetoTorpedo=[];
     public $ucionice=[];
 
     public function mount()
@@ -105,36 +107,40 @@ class OccupancyClassrooms extends Component
                 ->get();
 
         foreach ($this->ucionice as $ucionica){
-            $this->{"rasporedZima".$ucionica[0]} = [];
+            if(!Str::contains($ucionica[0], 'Online')){
+                $this->{"rasporedZima".$ucionica[0]} = [];
+            }            
         }
 
-        foreach ($this->ucionice as $ucionica){     
-            foreach ($termini as $termin){
-                if($termin->ucionica === $ucionica[0]){
-                    $nasao = false;
-                    foreach($this->{"rasporedZima".$ucionica[0]} as $rasporedJedan){
-                        if($rasporedJedan[1] === $termin->id){
-                            $nasao = true; 
+        foreach ($this->ucionice as $ucionica){ 
+            if(!Str::contains($ucionica[0], 'Online')){    
+                foreach ($termini as $termin){
+                    if($termin->ucionica === $ucionica[0]){
+                        $nasao = false;
+                        foreach($this->{"rasporedZima".$ucionica[0]} as $rasporedJedan){
+                            if($rasporedJedan[1] === $termin->id){
+                                $nasao = true; 
+                            }
                         }
-                    }
-                    if(!$nasao){                
-                        $jednaStavka = ["", $termin->id, $termin->dan, $termin->pocetak, $termin->kraj, $termin->ucionica];
-                        if($termin->razina_studija == "PRED"){
-                            if($termin->tip == "PREDAVANJE"){
-                                $jednaStavka[0] = ucfirst($termin->smjer[0]) . $termin->godina;
+                        if(!$nasao){                
+                            $jednaStavka = ["", $termin->id, $termin->dan, $termin->pocetak, $termin->kraj, $termin->ucionica];
+                            if($termin->razina_studija == "PRED"){
+                                if($termin->tip == "PREDAVANJE"){
+                                    $jednaStavka[0] = ucfirst($termin->smjer[0]) . $termin->godina;
+                                }else{
+                                    $jednaStavka[0] = $termin->smjer[0] . $termin->godina;
+                                }
                             }else{
-                                $jednaStavka[0] = $termin->smjer[0] . $termin->godina;
-                            }
-                        }else{
-                            if($termin->tip == "PREDAVANJE"){
-                                $jednaStavka[0] = ucfirst($termin->smjer[0]) . ($termin->godina + 3);
-                            }else{
-                                $jednaStavka[0] = $termin->smjer[0] . ($termin->godina + 3);
-                            }
-                        }                
-                        array_push($this->{"rasporedZima".$ucionica[0]}, $jednaStavka);
-                    } 
-                }           
+                                if($termin->tip == "PREDAVANJE"){
+                                    $jednaStavka[0] = ucfirst($termin->smjer[0]) . ($termin->godina + 3);
+                                }else{
+                                    $jednaStavka[0] = $termin->smjer[0] . ($termin->godina + 3);
+                                }
+                            }                
+                            array_push($this->{"rasporedZima".$ucionica[0]}, $jednaStavka);
+                        } 
+                    }           
+                }
             }
         }
 
@@ -150,36 +156,40 @@ class OccupancyClassrooms extends Component
                 ->get();
 
         foreach ($this->ucionice as $ucionica){
-            $this->{"rasporedLjeto".$ucionica[0]} = [];
+            if(!Str::contains($ucionica[0], 'Online')){
+                $this->{"rasporedLjeto".$ucionica[0]} = [];
+            }
         }
         
-        foreach ($this->ucionice as $ucionica){        
-            foreach ($terminiLjeto as $termin){
-                if($termin->ucionica === $ucionica[0]){
-                    $nasao = false;
-                    foreach($this->{"rasporedLjeto".$ucionica[0]} as $rasporedJedan){
-                        if($rasporedJedan[1] === $termin->id){
-                            $nasao = true; 
+        foreach ($this->ucionice as $ucionica){ 
+            if(!Str::contains($ucionica[0], 'Online')){       
+                foreach ($terminiLjeto as $termin){
+                    if($termin->ucionica === $ucionica[0]){
+                        $nasao = false;
+                        foreach($this->{"rasporedLjeto".$ucionica[0]} as $rasporedJedan){
+                            if($rasporedJedan[1] === $termin->id){
+                                $nasao = true; 
+                            }
                         }
-                    }
-                    if(!$nasao){                
-                        $jednaStavka = ["", $termin->id, $termin->dan, $termin->pocetak, $termin->kraj, $termin->ucionica];
-                        if($termin->razina_studija == "PRED"){
-                            if($termin->tip == "PREDAVANJE"){
-                                $jednaStavka[0] = ucfirst($termin->smjer[0]) . $termin->godina;
+                        if(!$nasao){                
+                            $jednaStavka = ["", $termin->id, $termin->dan, $termin->pocetak, $termin->kraj, $termin->ucionica];
+                            if($termin->razina_studija == "PRED"){
+                                if($termin->tip == "PREDAVANJE"){
+                                    $jednaStavka[0] = ucfirst($termin->smjer[0]) . $termin->godina;
+                                }else{
+                                    $jednaStavka[0] = $termin->smjer[0] . $termin->godina;
+                                }
                             }else{
-                                $jednaStavka[0] = $termin->smjer[0] . $termin->godina;
-                            }
-                        }else{
-                            if($termin->tip == "PREDAVANJE"){
-                                $jednaStavka[0] = ucfirst($termin->smjer[0]) . ($termin->godina + 3);
-                            }else{
-                                $jednaStavka[0] = $termin->smjer[0] . ($termin->godina + 3);
-                            }
-                        }                
-                        array_push($this->{"rasporedLjeto".$ucionica[0]}, $jednaStavka);
-                    }
-                }           
+                                if($termin->tip == "PREDAVANJE"){
+                                    $jednaStavka[0] = ucfirst($termin->smjer[0]) . ($termin->godina + 3);
+                                }else{
+                                    $jednaStavka[0] = $termin->smjer[0] . ($termin->godina + 3);
+                                }
+                            }                
+                            array_push($this->{"rasporedLjeto".$ucionica[0]}, $jednaStavka);
+                        }
+                    }           
+                }
             }
         }
         

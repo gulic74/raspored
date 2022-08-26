@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Exports\ClassroomsExport;
 use Maatwebsite\Excel as Excell;
 use Excel;
+use PDF;
 
 class ClassroomsController extends Controller
 {
@@ -226,6 +227,8 @@ class ClassroomsController extends Controller
             'semestarPDF' => ['required', 'string'],
         ]);
 
+        $classroomName = Classroom::find($id);
+
         $semestar = $request->input('semestarPDF');
 
         $terminiSemestar = DB::table('terms')
@@ -312,17 +315,20 @@ class ClassroomsController extends Controller
             array_push($podaci, $jednaStavka);
         }
 
-
-
-        
-
+        //return $classroomName->ime . "-" . $semestar; 
         //return $podaci;
         //return $rasporedSemestar;
 
 
         //******************PDF napraviti****************//
+        view()->share('podaci', $podaci); 
+        $pdf = PDF::loadView('classrooms.occupancyPDF', $podaci);
+        $pdf->setPaper('A4', 'landscape');        
 
-        return "pdf";
+        // download PDF file with download method
+        return $pdf->download($classroomName->ime . '-' . $semestar . '.pdf');
+
+        //return "pdf";
     }
 
     /**

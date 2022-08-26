@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Models\Course;
+use App\Models\TimetableFlag;
 use PDF;
 
 class TimetableController extends Controller
@@ -18,6 +19,12 @@ class TimetableController extends Controller
      */
     public function index(Request $request)
     {
+        //OVDJE NAPRAVITI ISPITIVANJE
+        $timeTableFlag = TimetableFlag::all()->first();
+        if($timeTableFlag->aktivanRedovni == 0 && auth()->user()->is_admin != 1){
+            return view('timetable.index-construction')->with('poruka', $timeTableFlag->komentarRedovni);
+        }        
+
         //return "bravo";
         $godina = $request->input('godina');
         if($godina === '3' && $request->input('studij') === "DIPL"){
@@ -60,12 +67,14 @@ class TimetableController extends Controller
                 foreach ($words as $w) {
                     if(strcmp($w, "(I)") == 0){
                         $acronym .= $w;
-                    }else{
-                        $acronym .= $w[0];
-                        if(strlen($w)>1){
-                            if($w[0].$w[1] == 'č'){
-                                    $acronym .= $w[1];
-                            }
+                    }else{                        
+                        if(strlen($w)>1 && $w == 'ČEKANJA'){
+                            //if($w[0].$w[1] == 'č'){
+                            //        $acronym .= $w[1];
+                            //}
+                            $acronym .= "Č";
+                        }else{
+                            $acronym .= $w[0];
                         }
                     }            
                 }
@@ -142,10 +151,9 @@ class TimetableController extends Controller
         $godina = $request->input('godina');
         $semestar = $request->input('semestar');
 
-
         $file = public_path('/files') . '/' . 'Raspored-' . $smjerTekst . '-' . $studijTekst . '-' . $godina . '-' . $semestar . '.pdf';
         $headers = array('Content-Type: application/pdf',);
-        return response()->download($file, 'Raspored-BS-PRED-1-ZIMSKI.pdf', $headers);
+        return response()->download($file, 'Raspored-' . $smjerTekst . '-' . $studijTekst . '-' . $godina . '-' . $semestar . '.pdf', $headers);
     }
 
     public function timetablegeneratePDF(Request $request)
@@ -224,11 +232,13 @@ class TimetableController extends Controller
                         if(strcmp($w, "(I)") == 0){
                             $acronym .= $w;
                         }else{
-                            $acronym .= $w[0];
-                            if(strlen($w)>1){
-                                if($w[0].$w[1] == 'č'){
-                                        $acronym .= $w[1];
-                                }
+                            if(strlen($w)>1 && $w == 'ČEKANJA'){
+                                //if($w[0].$w[1] == 'č'){
+                                //        $acronym .= $w[1];
+                                //}
+                                $acronym .= "Č";
+                            }else{
+                                $acronym .= $w[0];
                             }
                         }            
                     }
@@ -301,6 +311,13 @@ class TimetableController extends Controller
 
     public function indexstudent(Request $request)
     {
+
+        //OVDJE NAPRAVITI ISPITIVANJE
+        $timeTableFlag = TimetableFlag::all()->first();
+        if($timeTableFlag->aktivanRedovni == 0){
+            return view('timetable.index-construction')->with('poruka', $timeTableFlag->komentarRedovni);
+        }  
+
         $godina = $request->input('godina');
         if($godina === '3' && $request->input('studij') === "DIPL"){
             $godina = '2';
@@ -343,11 +360,13 @@ class TimetableController extends Controller
                     if(strcmp($w, "(I)") == 0){
                         $acronym .= $w;
                     }else{
-                        $acronym .= $w[0];
-                        if(strlen($w)>1){
-                            if($w[0].$w[1] == 'č'){
-                                    $acronym .= $w[1];
-                            }
+                        if(strlen($w)>1 && $w == 'ČEKANJA'){
+                            //if($w[0].$w[1] == 'č'){
+                            //        $acronym .= $w[1];
+                            //}
+                            $acronym .= "Č";
+                        }else{
+                            $acronym .= $w[0];
                         }
                     }            
                 }
@@ -465,11 +484,13 @@ class TimetableController extends Controller
                     if(strcmp($w, "(I)") == 0){
                         $acronym .= $w;
                     }else{
-                        $acronym .= $w[0];
-                        if(strlen($w)>1){
-                            if($w[0].$w[1] == 'č'){
-                                    $acronym .= $w[1];
-                            }
+                        if(strlen($w)>1 && $w == 'ČEKANJA'){
+                            //if($w[0].$w[1] == 'č'){
+                            //        $acronym .= $w[1];
+                            //}
+                            $acronym .= "Č";
+                        }else{
+                            $acronym .= $w[0];
                         }
                     }            
                 }
@@ -486,10 +507,56 @@ class TimetableController extends Controller
             }
         }
 
+        $podaciRaspored = [];
+        array_push($podaciRaspored, $kolegij->smjer);
+        array_push($podaciRaspored, $kolegij->razina_studija);
+        array_push($podaciRaspored, $kolegij->godina);
+        array_push($podaciRaspored, $semestar);
+        //return $request->input('smjer'); //BS, EITP, LMPP, NTPP, TOP
+
+        $smjer = $kolegij->smjer; 
+        $studij = $kolegij->razina_studija;
+
+
+        if($smjer === "BS"){            
+            if($studij === "DIPL"){
+                $smjer = "BRODOSTROJARSTVO I TEHNOLOGIJA POMORSKOG POMETA";
+            } else {
+                $smjer = "BRODOSTROJARSTVO";
+            }
+        } else if($smjer === "EITP"){
+            $smjer = "ELEKTRONIČKE I INFORMATIČKE TEHNOLOGIJE U POMORSTVU";
+        } else if($smjer === "LMPP"){
+            $smjer = "LOGISTIKA I MENADŽMENT U POMORSTVU I PROMETU";
+        } else if($smjer === "NTPP"){
+            $smjer = "NAUTIKA I TEHNOLOGIJA POMORSKOG PROMETA";
+        } else {
+            //TOP
+            $smjer = "TEHNOLOGIJA I ORGANIZACIJA PROMETA";
+        }
+
+        if($studij === "DIPL"){
+            $studij = "DIPLOMSKI SVEUČILIŠNI STUDIJ - " . $smjer;
+        } else {
+            $studij = "PREDDIPLOMSKI SVEUČILIŠNI STUDIJ - " . $smjer;
+        }
+        array_push($podaciRaspored, $studij);
+
+        $godinaTekst = "";
+        if($kolegij->godina === 3){
+            $godinaTekst = "TREĆA STUDIJSKA GODINA";
+        } else if($kolegij->godina === 2){
+            $godinaTekst = "DRUGA STUDIJSKA GODINA";
+        } else {
+            $godinaTekst = "PRVA STUDIJSKA GODINA";
+        }
+        array_push($podaciRaspored, $godinaTekst);
+        array_push($podaciRaspored, ($semestar . " SEMESTAR"));
+
         //$z = ['me','you', 'he'];
         //array_push($z, 'she', 'it');
         //print_r($z);
 
-        return view('timetable.index')->with('raspored', $raspored);
+        return view('timetable.index')->with('raspored', $raspored)->with('podaciRaspored', $podaciRaspored);;
     }
 }

@@ -46,7 +46,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr style="background-color: rgb(204, 203, 255)">
+                  <tr style="background-color: rgb(100, 167, 255)">
                         <td style="text-align: center;">8:15</td>
                         <td >
                           @foreach($rasporedSve[0] as $rasporedJedanZima)
@@ -208,7 +208,7 @@
                       @endforeach
                     </td>
                   </tr>
-                  <tr style="background-color: rgb(204, 203, 255)">
+                  <tr style="background-color: rgb(100, 167, 255)">
                     <td style="text-align: center;">10:15</td>
                     <td >
                       @foreach($rasporedSve[0] as $rasporedJedanZima)
@@ -370,7 +370,7 @@
                       @endforeach
                     </td>
                   </tr>
-                  <tr style="background-color: rgb(204, 203, 255)">
+                  <tr style="background-color: rgb(100, 167, 255)">
                     <td style="text-align: center;">12:15</td>
                     <td >
                       @foreach($rasporedSve[0] as $rasporedJedanZima)
@@ -532,7 +532,7 @@
                       @endforeach
                     </td>
                   </tr>
-                  <tr style="background-color: rgb(204, 203, 255)">
+                  <tr style="background-color: rgb(100, 167, 255)">
                     <td style="text-align: center;">14:15</td>
                     <td >
                       @foreach($rasporedSve[0] as $rasporedJedanZima)
@@ -694,7 +694,7 @@
                       @endforeach
                     </td>
                   </tr>
-                  <tr style="background-color: rgb(204, 203, 255)">
+                  <tr style="background-color: rgb(100, 167, 255)">
                     <td style="text-align: center;">16:15</td>
                     <td >
                       @foreach($rasporedSve[0] as $rasporedJedanZima)
@@ -856,7 +856,7 @@
                       @endforeach
                     </td>
                   </tr>
-                  <tr style="background-color: rgb(204, 203, 255)">
+                  <tr style="background-color: rgb(100, 167, 255)">
                     <td style="text-align: center;">18:15</td>
                     <td >
                       @foreach($rasporedSve[0] as $rasporedJedanZima)

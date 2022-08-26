@@ -37,6 +37,12 @@
                         <!--<x-jet-nav-link href="{{ route('classrooms.occupancy') }}"  :active="request()->routeIs('classrooms.occupancy')">
                             {{ __('Zauzetost učionica') }}
                         </x-jet-nav-link>-->
+
+                        @if (Auth::user()->is_admin === 1)
+                            <x-jet-nav-link href="{{ route('terms.freezeterms') }}"  :active="request()->routeIs('terms.freezeterms')">
+                                {{ __('Aktivacija / deaktivacija') }}
+                            </x-jet-nav-link>
+                        @endif
                     @endauth
                 </div>
             </div>
@@ -188,6 +194,12 @@
                 <!--<x-jet-responsive-nav-link href="{{ route('classrooms.occupancy') }}"  :active="request()->routeIs('classrooms.occupancy')">
                     {{ __('Zauzetost učionica') }}
                 </x-jet-responsive-nav-link>-->
+
+                @if (Auth::user()->is_admin === 1)
+                    <x-jet-responsive-nav-link href="{{ route('terms.freezeterms') }}"  :active="request()->routeIs('terms.freezeterms')">
+                        {{ __('Aktivacija / deaktivacija') }}
+                    </x-jet-responsive-nav-link>
+                @endif
             @endauth
         </div>
 

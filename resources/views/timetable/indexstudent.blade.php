@@ -2,7 +2,12 @@
     <x-slot name="header">
         @if (Auth::check())
         @else
-            <img style="min-width:50px; max-width:50px; padding-right:5px; float:left; margin-top:-10px; margin-bottom:0px;" src="{{ asset('images/logo3.png') }}"/>
+            <a href="{{ route('home') }}" style="display: inline-block; float:left; margin-right:10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                  </svg>
+            </a>
+            <a href="{{ route('home') }}" style="text-decoration: none; cursor: pionter;"><img style="min-width:50px; max-width:50px; padding-right:5px; float:left; margin-top:-10px; margin-bottom:0px;" src="{{ asset('images/logo3.png') }}"/></a>
         @endif
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Raspored sati') }} &nbsp;&nbsp;&nbsp; 

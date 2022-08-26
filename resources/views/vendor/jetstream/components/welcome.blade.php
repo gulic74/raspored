@@ -47,12 +47,13 @@
                 </div>
             </div>
             <div class="flex items-center justify-begin mt-6">
-                <x-jet-button class="ml-0">
+                <x-jet-button class="ml-0" >
                     {{ __('Dohvati raspored') }}
                 </x-jet-button>
             </div>
         </form>
-        <br/> 
+        <br/>
+        <!--   opacity-50 cursor-not-allowed disabled="true"
         <hr/>
         <div class="ml-0 py-4 pl-0">Preddiplomski i diplomski - izvanredni studij</div>
         <form method="POST" action="{{ route('timetable') }}">
@@ -124,6 +125,7 @@
                 </x-jet-button>
             </div>
         </form> 
+        -->
     </div>
 </div>
 

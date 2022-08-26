@@ -35,6 +35,7 @@
                         </thead>
                         <tbody>
                             @foreach($ucionice as $ucionica)
+@if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
@@ -194,7 +195,8 @@
                                     @endforeach
                                 </td>
                             </tr>
-                            @endforeach
+                            @endif
+@endforeach
                         </tbody>
                     </table>
                 </div>
@@ -227,6 +229,7 @@
                         </thead>
                         <tbody>
                             @foreach($ucionice as $ucionica)
+@if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
@@ -386,7 +389,8 @@
                                     @endforeach
                                 </td>
                             </tr>
-                            @endforeach
+                            @endif
+@endforeach
                         </tbody>
                     </table>
                 </div>
@@ -419,6 +423,7 @@
                         </thead>
                         <tbody>
                             @foreach($ucionice as $ucionica)
+@if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
@@ -578,7 +583,8 @@
                                     @endforeach
                                 </td>
                             </tr>
-                            @endforeach
+                            @endif
+@endforeach
                         </tbody>
                     </table>
                 </div>
@@ -611,6 +617,7 @@
                         </thead>
                         <tbody>
                             @foreach($ucionice as $ucionica)
+@if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
@@ -770,7 +777,8 @@
                                     @endforeach
                                 </td>
                             </tr>
-                            @endforeach
+                            @endif
+@endforeach
                         </tbody>
                     </table>
                 </div>
@@ -803,6 +811,7 @@
                         </thead>
                         <tbody>
                             @foreach($ucionice as $ucionica)
+@if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
@@ -962,7 +971,8 @@
                                     @endforeach
                                 </td>
                             </tr>
-                            @endforeach
+                            @endif
+@endforeach
                         </tbody>
                     </table>
                 </div>
@@ -1005,6 +1015,7 @@
                         </thead>
                         <tbody>
                             @foreach($ucionice as $ucionica)
+@if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
@@ -1164,7 +1175,8 @@
                                     @endforeach
                                 </td>
                             </tr>
-                            @endforeach
+                            @endif
+@endforeach
                         </tbody>
                     </table>
                 </div>
@@ -1197,6 +1209,7 @@
                         </thead>
                         <tbody>
                             @foreach($ucionice as $ucionica)
+@if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
@@ -1356,7 +1369,8 @@
                                     @endforeach
                                 </td>
                             </tr>
-                            @endforeach
+                            @endif
+@endforeach
                         </tbody>
                     </table>
                 </div>
@@ -1389,6 +1403,7 @@
                         </thead>
                         <tbody>
                             @foreach($ucionice as $ucionica)
+@if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
@@ -1548,7 +1563,8 @@
                                     @endforeach
                                 </td>
                             </tr>
-                            @endforeach
+                            @endif
+@endforeach
                         </tbody>
                     </table>
                 </div>
@@ -1581,6 +1597,7 @@
                         </thead>
                         <tbody>
                             @foreach($ucionice as $ucionica)
+@if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
@@ -1740,7 +1757,8 @@
                                     @endforeach
                                 </td>
                             </tr>
-                            @endforeach
+                            @endif
+@endforeach
                         </tbody>
                     </table>
                 </div>
@@ -1773,6 +1791,7 @@
                         </thead>
                         <tbody>
                             @foreach($ucionice as $ucionica)
+@if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
                                 <td class="border font-bold">{{$ucionica[0]}}</td>
                                 <td class="border">
@@ -1932,7 +1951,8 @@
                                     @endforeach
                                 </td>
                             </tr>
-                            @endforeach
+                            @endif
+@endforeach
                         </tbody>
                     </table>
                 </div>

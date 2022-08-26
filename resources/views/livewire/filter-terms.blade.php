@@ -79,11 +79,17 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-4 mb-2">
-                    <div class="mt-4 col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-2">
+                    <div class="mt-4 col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-1">
+                        <span style="font-weight: bold;">Kraj:</span> {{$rasporedJedan[10]}}:00
+                    </div>
+                    <div class="mt-4 col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-1">
                         <span style="font-weight: bold;">Komentar:</span> {{$rasporedJedan[8]}}
                     </div>
-                    <div class="mt-4 col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-2">
+                    <div class="mt-4 col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-1">
                         <span style="font-weight: bold;">Napomena:</span> {{$rasporedJedan[9]}}
+                    </div>
+                    <div class="mt-4 col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-1">
+                        <span style="font-weight: bold;">Aktivan:</span> {{$rasporedJedan[11]}}
                     </div>
                 </div>
                 <a class="inline-flex items-center justify-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-600 disabled:opacity-25 transition" style="text-decoration:none;" href="{{ url('terms/edit/' . $rasporedJedan[1] . '') }}">Uredi termin</a>

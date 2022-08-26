@@ -43,6 +43,7 @@ class OccupancyClassrooms extends Component
     public $rasporedZimaTK=[];
     public $rasporedZimaIK=[];
     public $rasporedZimaStr_Lab=[];
+    public $rasporedZimaTorpedo=[];
     public $rasporedLjeto107=[];
     public $rasporedLjeto108=[];
     public $rasporedLjeto207=[];
@@ -77,6 +78,7 @@ class OccupancyClassrooms extends Component
     public $rasporedLjetoTK=[];
     public $rasporedLjetoIK=[];
     public $rasporedLjetoStr_Lab=[];
+    public $rasporedLjetoTorpedo=[];
     public $ucionice=[];
 
     public function mount()
