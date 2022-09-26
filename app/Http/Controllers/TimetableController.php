@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
+use App\Models\SubjectPP;
+use App\Models\LecturePeriod;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 use App\Models\Course;
 use App\Models\TimetableFlag;
+use App\Models\Week;
 use PDF;
 
 class TimetableController extends Controller
@@ -154,6 +157,103 @@ class TimetableController extends Controller
         $file = public_path('/files') . '/' . 'Raspored-' . $smjerTekst . '-' . $studijTekst . '-' . $godina . '-' . $semestar . '.pdf';
         $headers = array('Content-Type: application/pdf',);
         return response()->download($file, 'Raspored-' . $smjerTekst . '-' . $studijTekst . '-' . $godina . '-' . $semestar . '.pdf', $headers);
+    }
+
+    public function indexstudentPPoPDF(Request $request)
+    {
+        $smjer = $request->input('smjer');
+        $semestar = $request->input('semestar');
+
+        $file = public_path('/files') . '/' . 'Raspored-PPO-' . $smjer . '-' . $semestar . '.pdf';
+        $headers = array('Content-Type: application/pdf',);
+        return response()->download($file, 'Raspored-PPO-' . $smjer . '-' . $semestar . '.pdf', $headers);
+    }
+
+    public function timetablegeneratePPoPDF(Request $request)
+    {
+        $byCourse = $request->input('smjer');
+        $bySemester = $request->input('semestar');
+        $byWeeks = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
+        //$weeks = ['1', '2', '3'];
+
+        $byWeek_start = [];
+        $byWeek_end = [];
+
+        foreach($byWeeks as $index => $week){
+            $byWeek_startt = Week::where('name', $week)->where('course', $byCourse)->where('semester', $bySemester)->first();
+            
+            if($byWeek_startt != NULL){
+                $byWeek_start[$index] = date_create_from_format("Y-m-d", $byWeek_startt->start_day)->format("d.m.Y.");
+                $byWeek_end[$index] = date('d.m.Y.', strtotime($byWeek_start[$index]. ' + 5 days'));
+            }
+        }
+
+        $weekDays = [
+            '1' => 'Ponedjeljak',
+            '2' => 'Utorak',
+            '3' => 'Srijeda',
+            '4' => 'Cetvrtak',
+            '5' => 'Petak',
+            '6' => 'Subota'
+        ];
+
+        $from = [];
+        $timeRange = [];
+        for ($i = 0; $i < count($byWeeks); $i++){
+            $lecturePeriods = $this->searchFilter($byCourse, $bySemester, $byWeeks[$i]);
+            
+            $from[$i] = '20:00';
+            foreach($lecturePeriods as $lecturePeriodsOne){
+                if(strcmp($lecturePeriodsOne->hours, $from[$i]) < 0){
+                    $from[$i] = $lecturePeriodsOne->hours;
+                }
+            }
+    
+            if($from[$i] == '20:00'){
+                $from[$i] = '08:00';
+            }
+
+            $to = '20:00';
+            $time = Carbon::parse($from[$i]);            
+
+            $timeRangeOne = [];
+            do{
+                array_push($timeRangeOne, [
+                    'start' => $time->format("H:i"),
+                    'real_start' => $time->addMinutes(15)->format("H:i"),
+                    'end' => $time->addMinutes(45)->format("H:i") 
+                ]);   
+            } while ($time->format("H:i") !== $to);
+
+            $timeRange[$i] = $timeRangeOne;
+        }
+
+        //return $timeRange;
+        // '20:00';
+
+        $lecturePeriods = $this->searchFilter2($byCourse, $bySemester);
+        //return $lecturePeriods;
+
+        $rasporedSve = [];
+        array_push($rasporedSve, $weekDays);
+        array_push($rasporedSve, $timeRange);
+        array_push($rasporedSve, $byWeeks);
+        array_push($rasporedSve, $byWeek_start);
+        array_push($rasporedSve, $byWeek_end);
+        array_push($rasporedSve, $lecturePeriods);
+        array_push($rasporedSve, $byCourse);
+        array_push($rasporedSve, $bySemester);
+
+        //*******************ZA SPREMANJE****************//
+        view()->share('rasporedSve', $rasporedSve); 
+        $pdf = PDF::loadView('timetablePPO.indexRasporedPDF', $rasporedSve);
+        $pdf->setPaper('A4', 'landscape');
+        $pdf->save(public_path('/files') . '/' . 'Raspored-PPO-' . $byCourse . '-' . $bySemester . '.pdf');
+        //*******************ZA SPREMANJE****************//
+
+        //return $weekDays;
+
+        //return view('timetablePPO.indexRaspored', compact('weekDays','timeRange','byWeeks', 'byWeek_start', 'byWeek_end', 'lecturePeriods', 'byCourse','bySemester'));
     }
 
     public function timetablegeneratePDF(Request $request)
@@ -558,5 +658,19 @@ class TimetableController extends Controller
         //print_r($z);
 
         return view('timetable.index')->with('raspored', $raspored)->with('podaciRaspored', $podaciRaspored);;
+    }
+
+    public function searchFilter($byCourse, $bySemester, $byWeek){
+        $kolegiji_svi = SubjectPP::where('course',$byCourse)->where('semester', $bySemester)->pluck('id');
+        $lecturePeriods = LecturePeriod::whereIn('subjectPP_id', $kolegiji_svi)->where('week', $byWeek)->get();
+     
+        return $lecturePeriods;
+    }
+
+    public function searchFilter2($byCourse, $bySemester){
+        $kolegiji_svi = SubjectPP::where('course',$byCourse)->where('semester', $bySemester)->pluck('id');
+        $lecturePeriods = LecturePeriod::whereIn('subjectPP_id', $kolegiji_svi)->get();
+     
+        return $lecturePeriods;
     }
 }

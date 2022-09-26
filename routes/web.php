@@ -7,6 +7,9 @@ use App\Http\Controllers\TimetableController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\ClassroomsController;
 use App\Http\Controllers\TimetableFlagController;
+use App\Http\Controllers\SubjectPPController;
+use App\Http\Controllers\WeekController;
+use App\Http\Controllers\TimetablePpoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +71,29 @@ Route::middleware('isadmin')->group(function(){
     //Route::resource('terms', 'TermsController');
     //rute za sve admine
 
+
+    Route::get('/subject', [SubjectPPController::class, 'index'])->name('subjects.index');
+    Route::post('/subject', [SubjectPPController::class, 'store'])->name('subjects.store');
+    Route::get('/subject/create', [SubjectPPController::class, 'create'])->name('subjects.create');
+    Route::get('/subject/{subject}/edit', [SubjectPPController::class, 'edit'])->name('subjects.edit');
+    Route::post('/subject/{subject}', [SubjectPPController::class, 'update'])->name('subjects.update');
+    Route::get('/subject/{subject}', [SubjectPPController::class, 'destroy'])->name('subjects.destroy');
+    Route::get('/search', [SubjectPPController::class, 'search'])->name('search');
+
+    Route::get('/subject/{subject}/editusers', [SubjectPPController::class, 'editusers'])->name('subjects.editusers');
+
+    Route::get('/week', [WeekController::class, 'index'])->name('weeks.index');
+    Route::post('/week', [WeekController::class, 'store'])->name('weeks.store');
+    Route::get('/week/create', [WeekController::class, 'create'])->name('weeks.create');
+    Route::get('/week/{week}/edit', [WeekController::class, 'edit'])->name('weeks.edit');
+    Route::post('/week/{week}', [WeekController::class, 'update'])->name('weeks.update');
+    Route::get('/week/{week}', [WeekController::class, 'destroy'])->name('weeks.destroy'); 
+
+    Route::get('/timetablePPO', [TimetablePpoController::class, 'index'])->name('timetableppo.index'); 
+    
+    Route::get('/timetablegeneratePPoPDF', [TimetableController::class, 'timetablegeneratePPoPDF'])->name('timetablegeneratePPoPDF');
+    
+
 });
 
 
@@ -90,5 +116,14 @@ Route::post('/timetablestudent', [TimetableController::class, 'indexstudent'])->
 Route::get('/timetablestudent', function () {
     return redirect(route('home'));
 });
+
 Route::get('/timetablestudentPDF', [TimetableController::class, 'indexstudentPDF'])->name('timetablestudentPDF');
+Route::get('/timetablestudentPPoPDF', [TimetableController::class, 'indexstudentPPoPDF'])->name('timetablestudentPPoPDF');
+
+
 Route::get('/logout', 'Laravel\Fortify\Http\Controllers\AuthenticatedSessionController@destroy');
+
+Route::post('/timetablePp', [TimetablePpoController::class, 'indexRaspored'])->name('indexPpoRaspored');
+Route::get('/timetablePp', function () {
+    return redirect(route('home'));
+});

@@ -39,9 +39,35 @@
                         </x-jet-nav-link>-->
 
                         @if (Auth::user()->is_admin === 1)
-                            <x-jet-nav-link href="{{ route('terms.freezeterms') }}"  :active="request()->routeIs('terms.freezeterms')">
-                                {{ __('Aktivacija / deaktivacija') }}
+                            <x-jet-nav-link href="{{ route('timetableflag.index') }}"  :active="request()->routeIs('timetableflag.index')">
+                                {{ __('Aktivacija rasporeda') }}
                             </x-jet-nav-link>
+                            <div class="mt-6"> 
+                                <x-jet-dropdown>
+                                    <x-slot name="trigger">            
+                                        <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                            <div>PPO</div>            
+                                            <div class="ml-1">
+                                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                        </button>            
+                                    </x-slot>            
+                                    <x-slot name="content">            
+                                        <!-- User Management -->
+                                        <x-jet-dropdown-link href="{{ route('timetableppo.index') }}"  :active="request()->routeIs('timetableppo.index')">
+                                            {{ __('Slaganje rasporeda') }}
+                                        </x-jet-dropdown-link>
+                                        <x-jet-dropdown-link href="{{ route('subjects.index') }}"  :active="request()->routeIs('subjects.index')">
+                                            {{ __('Kolegiji PPO') }}
+                                        </x-jet-dropdown-link> 
+                                        <x-jet-dropdown-link href="{{ route('weeks.index') }}"  :active="request()->routeIs('weeks.index')">
+                                            {{ __('Tjedni nastave') }}
+                                        </x-jet-dropdown-link> 
+                                    </x-slot>            
+                                </x-jet-dropdown>
+                            </div>
                         @endif
                     @endauth
                 </div>
@@ -196,9 +222,35 @@
                 </x-jet-responsive-nav-link>-->
 
                 @if (Auth::user()->is_admin === 1)
-                    <x-jet-responsive-nav-link href="{{ route('terms.freezeterms') }}"  :active="request()->routeIs('terms.freezeterms')">
-                        {{ __('Aktivacija / deaktivacija') }}
+                    <x-jet-responsive-nav-link href="{{ route('timetableflag.index') }}"  :active="request()->routeIs('timetableflag.index')">
+                        {{ __('Aktivacija rasporeda') }}
                     </x-jet-responsive-nav-link>
+                    <div class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition'">
+                        <x-jet-dropdown>
+                            <x-slot name="trigger" class="mt-6">            
+                                <button class="flex items-center text-base font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                    <div>PPO</div>            
+                                    <div class="ml-1">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </button>            
+                            </x-slot>            
+                            <x-slot name="content">            
+                                <!-- User Management -->
+                                <x-jet-dropdown-link href="{{ route('timetableppo.index') }}"  :active="request()->routeIs('timetableppo.index')">
+                                    {{ __('Slaganje rasporeda') }}
+                                </x-jet-dropdown-link>
+                                <x-jet-dropdown-link href="{{ route('subjects.index') }}"  :active="request()->routeIs('subjects.index')">
+                                    {{ __('Kolegiji PPO') }}
+                                </x-jet-dropdown-link> 
+                                <x-jet-dropdown-link href="{{ route('weeks.index') }}"  :active="request()->routeIs('weeks.index')">
+                                    {{ __('Tjedni nastave') }}
+                                </x-jet-dropdown-link>           
+                            </x-slot>            
+                        </x-jet-dropdown>
+                    </div>
                 @endif
             @endauth
         </div>

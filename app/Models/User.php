@@ -65,4 +65,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Term::class, 'user_term');
     }
+
+    public function subjectPPs()
+    {
+        return $this->belongsToMany(SubjectPP::class, 'user_subject_p_p_s');
+    }
+    
 }

@@ -98,17 +98,17 @@
                 </x-jet-button>
             </div>
         </form>
-        <br/> 
+        <br/> -->
         <hr/>
         <div class="ml-0 py-4 pl-0">Posebni program obrazovanja</div>
-        <form method="POST" action="{{ route('timetable') }}">
+        <form method="POST" action="{{ route('indexPpoRaspored') }}">
             @csrf
             <div class="grid grid-cols-2">
                 <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1">
                     <x-jet-label for="smjer" value="Smjer" class="text-base"/>
                     <select name="smjer" id="smjer" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-50">
-                        <option value="BS">BS</option>
-                        <option value="NTPP">NTPP</option>
+                        <option value="Brodostrojarstvo">Brodostrojarstvo</option>
+                        <option value="Nautika">Nautika</option>
                     </select>
                 </div>
                 <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1">
@@ -120,12 +120,11 @@
                 </div>
             </div>
             <div class="flex items-center justify-begin mt-6">
-                <x-jet-button class="ml-0" disabled="disabled">
+                <x-jet-button class="ml-0" >
                     {{ __('Dohvati raspored') }}
                 </x-jet-button>
             </div>
-        </form> 
-        -->
+        </form>         
     </div>
 </div>
 

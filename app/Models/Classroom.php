@@ -13,4 +13,8 @@ class Classroom extends Model
     {
         return $this->belongsToMany(Term::class, 'classroom_term');
     }
+
+    public function lecturePeriods(){
+        return $this->hasMany('App\Models\LecturePeriod');
+    }
 }
