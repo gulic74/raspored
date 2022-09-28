@@ -52,10 +52,10 @@
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
-                                <label for="semestar" class="block text-sm font-medium text-gray-700">Semestar održavanja: </label>
+                                <label for="semestar" class="block text-sm font-medium text-gray-700">Blok održavanja: </label>
                                 <select id="semestar" name="semestar" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                    <option value="ZIMSKI">Zimski semestar</option>
-                                    <option value="LJETNI">Ljetni semestar</option>
+                                    <option value="ZIMSKI">1. blok</option>
+                                    <option value="LJETNI">2. blok</option>
                                 </select>
                             </div>
 

@@ -42,8 +42,8 @@
                         <div class="col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-1 mb-2">
                             <x-jet-label value="Semestar:" class="inline-block text-base"/>
                             <select wire:model="bySemester" wire:change="filterSearch()" class="inline-block border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-50">
-                                <option value="ZIMSKI">Zimski semestar</option>
-                                <option value="LJETNI">Ljetni semestar</option>
+                                <option value="ZIMSKI">1. blok</option>
+                                <option value="LJETNI">2. blok</option>
                             </select>
                         </div>
 

@@ -402,9 +402,9 @@ class TimeSubject extends Component
 
     public $podaci = '';
 
-    public function mount($timeRange, $weekDays, $byWeeks, $weeksData){
-        $this->defaultNautika = '410b';
-        $this->defaultBrodostrojarstvo = '422';
+    public function mount($timeRange, $weekDays, $byWeeks, $weeksData, $infoPPOone){
+        $this->defaultNautika = $infoPPOone->defaultNautikaUciona;
+        $this->defaultBrodostrojarstvo = $infoPPOone->defaultBrodostrojarstvoUciona;
 
         
 
@@ -442,7 +442,7 @@ class TimeSubject extends Component
 
     public function render()
     {
-        if ($this->byCourse == 'Nautika'){
+        /*if ($this->byCourse == 'Nautika'){
             foreach($this->dani as $dan){
                 foreach($this->sati as $sat){
                     $this->{"ucionica_" . $dan . "_" . $sat} = $this->classrooms->where('ime', '=', $this->defaultNautika)->pluck('id')->first();
@@ -454,7 +454,7 @@ class TimeSubject extends Component
                     $this->{"ucionica_" . $dan . "_" . $sat} = $this->classrooms->where('ime', '=', $this->defaultBrodostrojarstvo)->pluck('id')->first();
                 }
             }
-        }
+        }*/
 
         $this->classrooms = Classroom::where('ime', '=', '207')
                                     ->orWhere('ime', '=', '227')

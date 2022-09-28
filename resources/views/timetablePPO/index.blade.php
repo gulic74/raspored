@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-12xl mx-auto sm:px-6 lg:px-8">
-            @livewire('time-subject', ['timeRange' => $timeRange, 'weekDays' => $weekDays, 'byWeeks' => $byWeeks, 'weeksData' => $weeksData])               
+            @livewire('time-subject', ['timeRange' => $timeRange, 'weekDays' => $weekDays, 'byWeeks' => $byWeeks, 'weeksData' => $weeksData, 'infoPPOone' => $infoPPOone])               
         </div>
     </div> 
 </x-app-layout>

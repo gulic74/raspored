@@ -23,7 +23,7 @@
     <div class="py-12">
         <div class="max-w-12xl mx-auto sm:px-6 lg:px-8 pt-0">
             <div class="mb-6 text-white font-bold p-1">
-                POSEBNI PROGRAM OBRAZOVANJA - {{Str::upper($byCourse)}}<hr/>
+            POSEBNI PROGRAM OBRAZOVANJA - {{Str::upper($byCourse)}} {{$ciklusPoruka}}<hr/>
                 <span class="text-base font-bold">{{( $bySemester == 'ZIMSKI') ? 'Prvi blok' : ''}}{{( $bySemester == 'LJETNI') ? 'Drugi blok' : ''}}</span><br/>
                 <span class="text-base font-bold">
                     @if(isset($byWeek_start))
@@ -46,8 +46,8 @@
                         <div class="col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-1 mb-2">
                             <x-jet-label value="Blok:" class="text-base inline-block text-white" style="color:white"/>
                             <select name="semestar" id="semestar" class="inline-block text-black border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-50">
-                                <option value="ZIMSKI" {{( $bySemester == 'ZIMSKI') ? 'selected' : ''}}>Prvi blok - zima</option>
-                                <option value="LJETNI" {{( $bySemester == 'LJETNI') ? 'selected' : ''}}>Drugi blok - ljeto</option>
+                                <option value="ZIMSKI" {{( $bySemester == 'ZIMSKI') ? 'selected' : ''}}>1. blok</option>
+                                <option value="LJETNI" {{( $bySemester == 'LJETNI') ? 'selected' : ''}}>2. blok</option>
                             </select>
                         </div>
     

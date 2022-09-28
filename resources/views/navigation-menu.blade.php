@@ -65,6 +65,9 @@
                                         <x-jet-dropdown-link href="{{ route('weeks.index') }}"  :active="request()->routeIs('weeks.index')">
                                             {{ __('Tjedni nastave') }}
                                         </x-jet-dropdown-link> 
+                                        <x-jet-dropdown-link href="{{ route('infoPPO.index') }}"  :active="request()->routeIs('infoPPO.index')">
+                                            {{ __('PPO info') }}
+                                        </x-jet-dropdown-link>  
                                     </x-slot>            
                                 </x-jet-dropdown>
                             </div>
@@ -247,6 +250,9 @@
                                 </x-jet-dropdown-link> 
                                 <x-jet-dropdown-link href="{{ route('weeks.index') }}"  :active="request()->routeIs('weeks.index')">
                                     {{ __('Tjedni nastave') }}
+                                </x-jet-dropdown-link>
+                                <x-jet-dropdown-link href="{{ route('infoPPO.index') }}"  :active="request()->routeIs('infoPPO.index')">
+                                    {{ __('PPO info') }}
                                 </x-jet-dropdown-link>           
                             </x-slot>            
                         </x-jet-dropdown>

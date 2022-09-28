@@ -112,10 +112,10 @@
                     </select>
                 </div>
                 <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1">
-                    <x-jet-label for="semestar" value="Semestar" class="text-base"/>
+                    <x-jet-label for="semestar" value="Blok" class="text-base"/>
                     <select name="semestar" id="semestar" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-50">
-                        <option value="ZIMSKI">Zimski</option>
-                        <option value="LJETNI">Ljetni</option>
+                        <option value="ZIMSKI">1. blok</option>
+                        <option value="LJETNI">2. blok</option>
                     </select>
                 </div>
             </div>

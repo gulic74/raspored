@@ -8,6 +8,7 @@ use App\Models\Week;
 use Carbon\Carbon;
 use App\Models\LecturePeriod;
 use App\Models\TimetableFlag;
+use App\Models\InfoPPO;
 use PDF;
 
 class TimetablePpoController extends Controller
@@ -44,7 +45,9 @@ class TimetablePpoController extends Controller
 
         $weeksData = Week::all();
 
-        return view('timetablePPO.index', compact('weekDays','timeRange', 'subjectAll', 'byWeeks'))->with('weeksData', $weeksData);
+        $infoPPOone = InfoPPO::all()->first();
+
+        return view('timetablePPO.index', compact('weekDays','timeRange', 'subjectAll', 'byWeeks'))->with('weeksData', $weeksData)->with('infoPPOone', $infoPPOone);
     }
 
     public function indexRaspored(Request $request){
@@ -60,8 +63,40 @@ class TimetablePpoController extends Controller
             }            
         } 
              
-        $byCourse = isset($request->smjer) ? $request->smjer : '';
-        $bySemester = isset($request->semestar) ? $request->semestar : '';
+        $byCourse = isset($request->smjer) ? $request->smjer : 'Nautika';
+        $bySemester = isset($request->semestar) ? $request->semestar : 'ZIMSKI';
+
+        $infoPPOone = InfoPPO::all()->first();
+        $ciklusPoruka = "";
+        $aktivanTrazeniRaspored = $infoPPOone->aktivanNB1;
+        $blok = "1. blok";
+        if($byCourse == 'Nautika' && $bySemester == "ZIMSKI"){
+            $ciklusPoruka = $infoPPOone->ciklusNB1;
+            $aktivanTrazeniRaspored = $infoPPOone->aktivanNB1;
+        } else if ($byCourse == 'Nautika' && $bySemester == "LJETNI"){
+            $ciklusPoruka = $infoPPOone->ciklusNB2;
+            $aktivanTrazeniRaspored = $infoPPOone->aktivanNB2;
+            $blok = "2. blok";
+        } else if($byCourse == 'Brodostrojarstvo' && $bySemester == "ZIMSKI"){
+            $ciklusPoruka = $infoPPOone->ciklusBB1;
+            $aktivanTrazeniRaspored = $infoPPOone->aktivanBB1;
+        } else if ($byCourse == 'Brodostrojarstvo' && $bySemester == "LJETNI"){
+            $ciklusPoruka = $infoPPOone->ciklusBB2;
+            $aktivanTrazeniRaspored = $infoPPOone->aktivanBB2;
+            $blok = "2. blok";
+        }
+
+        if($aktivanTrazeniRaspored == 0){
+            if(auth()->user() != null){
+                if(auth()->user()->is_admin != 1){
+                    $ciklusPoruka2 = "Raspored " . $byCourse . " " . $ciklusPoruka . " - " . $blok . " nije dostupan.";
+                    return view('timetable.index-construction')->with('poruka', $ciklusPoruka2);
+                }
+            }else{
+                $ciklusPoruka2 = "Raspored " . $byCourse . " " . $ciklusPoruka . " - " . $blok . " nije dostupan.";
+                return view('timetable.index-construction')->with('poruka', $ciklusPoruka2);
+            }            
+        }
 
         $byWeeksInitial = Week::where('course', $byCourse)->where('semester', $bySemester)->get();        
         $mytime = Carbon::now();
@@ -140,7 +175,7 @@ class TimetablePpoController extends Controller
         }*/
 //return {};
 
-        return view('timetablePPO.indexRaspored', compact('weekDays','byWeek','timeRange','byWeeks', 'byWeek_start', 'byWeek_end', 'lecturePeriods', 'byCourse','bySemester'));
+        return view('timetablePPO.indexRaspored', compact('weekDays','byWeek','timeRange','byWeeks', 'byWeek_start', 'byWeek_end', 'lecturePeriods', 'byCourse','bySemester', 'ciklusPoruka'));
     }
 
     public function searchFilter($byCourse, $bySemester, $byWeek){

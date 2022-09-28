@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use App\Models\Course;
 use App\Models\TimetableFlag;
 use App\Models\Week;
+use App\Models\InfoPPO;
 use PDF;
 
 class TimetableController extends Controller
@@ -164,9 +165,14 @@ class TimetableController extends Controller
         $smjer = $request->input('smjer');
         $semestar = $request->input('semestar');
 
-        $file = public_path('/files') . '/' . 'Raspored-PPO-' . $smjer . '-' . $semestar . '.pdf';
+        $blok = "1-blok";
+        if($semestar == "LJETNI"){
+            $blok = "2-blok";
+        } 
+
+        $file = public_path('/files') . '/' . 'Raspored-PPO-' . $smjer . '-' . $blok . '.pdf';
         $headers = array('Content-Type: application/pdf',);
-        return response()->download($file, 'Raspored-PPO-' . $smjer . '-' . $semestar . '.pdf', $headers);
+        return response()->download($file, 'Raspored-PPO-' . $smjer . '-' . $blok . '.pdf', $headers);
     }
 
     public function timetablegeneratePPoPDF(Request $request)
@@ -188,6 +194,11 @@ class TimetableController extends Controller
             }
         }
 
+        $blok = "1-blok";
+        if($bySemester == "LJETNI"){
+            $blok = "2-blok";
+        } 
+
         $weekDays = [
             '1' => 'Ponedjeljak',
             '2' => 'Utorak',
@@ -203,7 +214,9 @@ class TimetableController extends Controller
             $lecturePeriods = $this->searchFilter($byCourse, $bySemester, $byWeeks[$i]);
             
             $from[$i] = '20:00';
+            $brojac = 0;
             foreach($lecturePeriods as $lecturePeriodsOne){
+                $brojac++;
                 if(strcmp($lecturePeriodsOne->hours, $from[$i]) < 0){
                     $from[$i] = $lecturePeriodsOne->hours;
                 }
@@ -213,26 +226,61 @@ class TimetableController extends Controller
                 $from[$i] = '08:00';
             }
 
-            $to = '20:00';
-            $time = Carbon::parse($from[$i]);            
+            $to[$i] = '08:00';
+            foreach($lecturePeriods as $lecturePeriodsOne){
+                if(strcmp($to[$i], $lecturePeriodsOne->hours) < 0){                    
+                    $to[$i] = $lecturePeriodsOne->hours;
+                }
+            }
+
+            if($to[$i] == '08:00'){
+                $to[$i] = '20:00';
+            }
+
+            if($brojac == 0){
+                $from[$i] = '14:00';
+                $to[$i] = '20:00';
+            }
+
+
+            $time = Carbon::parse($from[$i]);  
 
             $timeRangeOne = [];
-            do{
+            if(strcmp($to[$i], $from[$i]) !== 0){                
+                do{
+                    array_push($timeRangeOne, [
+                        'start' => $time->format("H:i"),
+                        'real_start' => $time->addMinutes(15)->format("H:i"),
+                        'end' => $time->addMinutes(45)->format("H:i") 
+                    ]);   
+                } while ($time->format("H:i") !== $to[$i]);
+            }
+
+            if($brojac != 0){
+                $time2 = Carbon::parse($to[$i]);
                 array_push($timeRangeOne, [
-                    'start' => $time->format("H:i"),
-                    'real_start' => $time->addMinutes(15)->format("H:i"),
-                    'end' => $time->addMinutes(45)->format("H:i") 
-                ]);   
-            } while ($time->format("H:i") !== $to);
+                    'start' => $time2->format("H:i"),
+                    'real_start' => $time2->addMinutes(15)->format("H:i"),
+                    'end' => $time2->addMinutes(45)->format("H:i") 
+                ]);
+            }
 
             $timeRange[$i] = $timeRangeOne;
         }
 
-        //return $timeRange;
-        // '20:00';
-
         $lecturePeriods = $this->searchFilter2($byCourse, $bySemester);
-        //return $lecturePeriods;
+
+        $infoPPOone = InfoPPO::all()->first();
+        $ciklusPoruka = "";
+        if($byCourse == 'Nautika' && $bySemester == "ZIMSKI"){
+            $ciklusPoruka = $infoPPOone->ciklusNB1;
+        } else if ($byCourse == 'Nautika' && $bySemester == "LJETNI"){
+            $ciklusPoruka = $infoPPOone->ciklusNB2;
+        } else if($byCourse == 'Brodostrojarstvo' && $bySemester == "ZIMSKI"){
+            $ciklusPoruka = $infoPPOone->ciklusBB1;
+        } else if ($byCourse == 'Brodostrojarstvo' && $bySemester == "LJETNI"){
+            $ciklusPoruka = $infoPPOone->ciklusBB2;
+        }
 
         $rasporedSve = [];
         array_push($rasporedSve, $weekDays);
@@ -243,12 +291,13 @@ class TimetableController extends Controller
         array_push($rasporedSve, $lecturePeriods);
         array_push($rasporedSve, $byCourse);
         array_push($rasporedSve, $bySemester);
+        array_push($rasporedSve, $ciklusPoruka);
 
         //*******************ZA SPREMANJE****************//
         view()->share('rasporedSve', $rasporedSve); 
         $pdf = PDF::loadView('timetablePPO.indexRasporedPDF', $rasporedSve);
         $pdf->setPaper('A4', 'landscape');
-        $pdf->save(public_path('/files') . '/' . 'Raspored-PPO-' . $byCourse . '-' . $bySemester . '.pdf');
+        $pdf->save(public_path('/files') . '/' . 'Raspored-PPO-' . $byCourse . '-' . $blok . '.pdf');
         //*******************ZA SPREMANJE****************//
 
         //return $weekDays;

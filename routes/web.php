@@ -10,6 +10,7 @@ use App\Http\Controllers\TimetableFlagController;
 use App\Http\Controllers\SubjectPPController;
 use App\Http\Controllers\WeekController;
 use App\Http\Controllers\TimetablePpoController;
+use App\Http\Controllers\InfoPpoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,9 @@ Route::middleware('isadmin')->group(function(){
 
     Route::get('/timetableflag', [TimetableFlagController::class, 'index'])->name('timetableflag.index');
     Route::post('/timetableflagstore', [TimetableFlagController::class, 'storeflags'])->name('timetableflag.storeflags');
+
+    Route::get('/infoPPO', [InfoPpoController::class, 'index'])->name('infoPPO.index');
+    Route::post('/storeinfoPPO', [InfoPpoController::class, 'storeInfo'])->name('infoPPO.store');
 
     Route::get('/timetableadmin/{id}', [TimetableController::class, 'indexadmin'])->name('timetable.indexadmin');
     

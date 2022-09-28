@@ -57,7 +57,7 @@
                                           <span style="font-weight: bold;">Smjer:</span> {{ $subjectWithUserJedan[2] }}
                                       </div>
                                       <div class="mt-4 col-span-6 sm:col-span-2 md:col-span-2 lg:col-span-1">
-                                          <span style="font-weight: bold;">Semestar:</span> {{ $subjectWithUserJedan[3] }}
+                                          <span style="font-weight: bold;">Blok:</span> {{($subjectWithUserJedan[3] == 'ZIMSKI') ? '1. blok' : '2. blok'}}
                                       </div>
                                       <div class="mt-4 col-span-6 sm:col-span-2 md:col-span-2 lg:col-span-1">
                                           <span style="font-weight: bold;">Broj sati:</span> {{ $subjectWithUserJedan[4] }} ({{ $subjectWithUserJedan[5] }})

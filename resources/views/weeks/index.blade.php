@@ -44,7 +44,7 @@
                                           <span style="font-weight: bold;">Smjer:</span> {{ $week->course }}
                                       </div>
                                       <div class="mt-4 col-span-5 sm:col-span-2 md:col-span-2 lg:col-span-1">
-                                          <span style="font-weight: bold;">Semestar:</span> {{ $week->semester }}
+                                          <span style="font-weight: bold;">Blok:</span> {{($week->semester == 'ZIMSKI') ? '1. blok' : '2. blok'}}
                                       </div>
                                       <div class="mt-4 col-span-5 sm:col-span-2 md:col-span-2 lg:col-span-1">
                                           <span style="font-weight: bold;">Početak:</span> {{ date_create_from_format("Y-m-d", $week->start_day )->format("d.m.Y.") }}

@@ -49,10 +49,10 @@
                         </div>
 
                         <div class="col-span-6 sm:col-span-3">
-                            <label for="semestar" class="block text-sm font-medium text-gray-700">Semestar: </label>
+                            <label for="semestar" class="block text-sm font-medium text-gray-700">Blok: </label>
                             <select id="semestar" name="semestar" value="{{ $week->semester }}" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                            <option value="ZIMSKI" {{($week->semester == 'ZIMSKI') ? 'selected' : ''}}>Zimski semestar</option>
-                            <option value="LJETNI" {{($week->semester == 'LJETNI') ? 'selected' : ''}}>Ljetni semestar</option>
+                            <option value="ZIMSKI" {{($week->semester == 'ZIMSKI') ? 'selected' : ''}}>1. blok</option>
+                            <option value="LJETNI" {{($week->semester == 'LJETNI') ? 'selected' : ''}}>2. blok</option>
                             </select>
                         </div>
 
