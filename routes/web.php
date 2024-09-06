@@ -10,6 +10,7 @@ use App\Http\Controllers\TimetableFlagController;
 use App\Http\Controllers\SubjectPPController;
 use App\Http\Controllers\WeekController;
 use App\Http\Controllers\TimetablePpoController;
+use App\Http\Controllers\TimePartSchedule;
 use App\Http\Controllers\InfoPpoController;
 
 /*
@@ -23,6 +24,10 @@ use App\Http\Controllers\InfoPpoController;
 |
 */
 
+/*Route::get('/public/index.php/vendor/livewire/livewire.js', function () {
+    return redirect(asset('/public/vendor/livewire/livewire.js'));
+});*/
+
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
@@ -32,6 +37,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware('isadmin')->group(function(){
+
+    Route::post('/parttimescheduledeleteall', [TimePartSchedule::class, 'deletescheduleall'])->name('parttimeschedule.deleteall');
+    Route::post('/parttimescheduledelete', [TimePartSchedule::class, 'deleteschedule'])->name('parttimeschedule.delete');
+    Route::post('/parttimeschedule', [TimePartSchedule::class, 'index'])->name('parttimeschedule.index');
+    Route::get('/parttimeschedulecreate', [TimePartSchedule::class, 'indexcreate'])->name('parttimeschedule.indexcreate');
 
     Route::get('/timetableflag', [TimetableFlagController::class, 'index'])->name('timetableflag.index');
     Route::post('/timetableflagstore', [TimetableFlagController::class, 'storeflags'])->name('timetableflag.storeflags');
@@ -113,6 +123,11 @@ Route::middleware('auth')->group(function(){
         return redirect(route('home'));
     });
 });
+
+Route::post('/parttimetable', [TimePartSchedule::class, 'indextimetable'])->name('parttimeschedule.indextimetable');
+Route::get('/parttimetable', function () {
+    return view('welcome');
+})->name('getparttimetable');
 
 //Route::get('timetable', [TimetableController::class, 'index'])->name('timetable.index');
 Route::post('/timetablestudent', [TimetableController::class, 'indexstudent'])->name('timetablestudent');

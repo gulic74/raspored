@@ -20,7 +20,7 @@
         <tbody>
             @foreach($ucionice as $ucionica)
             <tr class="bg-gray-100">
-                <td class="border font-bold">{{$ucionica[0]}}</td>
+                <td class="border font-bold">{{str_replace('_', ' ', $ucionica[0])}}</td>
                 <td class="border">
                     @foreach($rasporedZima as $rasporedJedanZima)
                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
@@ -203,7 +203,7 @@
         <tbody>
             @foreach($ucionice as $ucionica)
             <tr class="bg-gray-100">
-                <td class="border font-bold">{{$ucionica[0]}}</td>
+                <td class="border font-bold">{{str_replace('_', ' ', $ucionica[0])}}</td>
                 <td class="border">
                     @foreach($rasporedLjeto as $rasporedJedanZima)
                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])

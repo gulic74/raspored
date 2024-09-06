@@ -36,7 +36,7 @@ class TimeSubject extends Component
     public $updateHours = "";
 
     public $defaultNautika = '422';
-    public $defaultBrodostrojarstvo = '410b';
+    public $defaultBrodostrojarstvo = '413';
 
     public $updateItemLecture = false;
 
@@ -412,11 +412,15 @@ class TimeSubject extends Component
 
         $this->classrooms = Classroom::where('ime', '=', '207')
                                     ->orWhere('ime', '=', '227')
+                                    ->orWhere('ime', '=', '301')
                                     ->orWhere('ime', '=', '401')
                                     ->orWhere('ime', '=', '410b')
+                                    ->orWhere('ime', '=', '413')
                                     ->orWhere('ime', '=', '422')
                                     ->orWhere('ime', '=', '423')
                                     ->orWhere('ime', '=', '503')
+                                    ->orWhere('ime', '=', 'TK')
+                                    ->orWhere('ime', '=', 'Master_Hub_Lab')
                                     ->orWhere('ime', '=', '504')->orderBy('ime', 'ASC')->get();
         $this->kolegiji_svi = SubjectPP::where('course',$this->byCourse)->where('semester', $this->bySemester)->pluck('id');
         $this->kolegiji_sviPodaci = SubjectPP::where('course',$this->byCourse)->where('semester', $this->bySemester)->get();
@@ -458,11 +462,15 @@ class TimeSubject extends Component
 
         $this->classrooms = Classroom::where('ime', '=', '207')
                                     ->orWhere('ime', '=', '227')
+                                    ->orWhere('ime', '=', '301')
                                     ->orWhere('ime', '=', '401')
                                     ->orWhere('ime', '=', '410b')
+                                    ->orWhere('ime', '=', '413')
                                     ->orWhere('ime', '=', '422')
                                     ->orWhere('ime', '=', '423')
                                     ->orWhere('ime', '=', '503')
+                                    ->orWhere('ime', '=', 'TK')
+                                    ->orWhere('ime', '=', 'Master_Hub_Lab')
                                     ->orWhere('ime', '=', '504')->orderBy('ime', 'ASC')->get();
         return view('livewire.time-subject',[
             'lecturePeriods' => $this->lecturePeriods]);

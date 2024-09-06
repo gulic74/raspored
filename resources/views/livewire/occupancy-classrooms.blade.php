@@ -37,7 +37,7 @@
                             @foreach($ucionice as $ucionica)
 @if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
-                                <td class="border font-bold">{{$ucionica[0]}}</td>
+                                <td class="border font-bold">{{str_replace('_', ' ', $ucionica[0])}}</td>
                                 <td class="border">
                                     @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
@@ -231,7 +231,7 @@
                             @foreach($ucionice as $ucionica)
 @if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
-                                <td class="border font-bold">{{$ucionica[0]}}</td>
+                                <td class="border font-bold">{{str_replace('_', ' ', $ucionica[0])}}</td>
                                 <td class="border">
                                     @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
@@ -425,7 +425,7 @@
                             @foreach($ucionice as $ucionica)
 @if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
-                                <td class="border font-bold">{{$ucionica[0]}}</td>
+                                <td class="border font-bold">{{str_replace('_', ' ', $ucionica[0])}}</td>
                                 <td class="border">
                                     @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
@@ -619,7 +619,7 @@
                             @foreach($ucionice as $ucionica)
 @if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
-                                <td class="border font-bold">{{$ucionica[0]}}</td>
+                                <td class="border font-bold">{{str_replace('_', ' ', $ucionica[0])}}</td>
                                 <td class="border">
                                     @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
@@ -813,7 +813,7 @@
                             @foreach($ucionice as $ucionica)
 @if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
-                                <td class="border font-bold">{{$ucionica[0]}}</td>
+                                <td class="border font-bold">{{str_replace('_', ' ', $ucionica[0])}}</td>
                                 <td class="border">
                                     @foreach(${"rasporedZima".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])
@@ -1017,7 +1017,7 @@
                             @foreach($ucionice as $ucionica)
 @if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
-                                <td class="border font-bold">{{$ucionica[0]}}</td>
+                                <td class="border font-bold">{{str_replace('_', ' ', $ucionica[0])}}</td>
                                 <td class="border">
                                     @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'pon' && $rasporedJedanZima[5] === $ucionica[0])
@@ -1211,7 +1211,7 @@
                             @foreach($ucionice as $ucionica)
 @if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
-                                <td class="border font-bold">{{$ucionica[0]}}</td>
+                                <td class="border font-bold">{{str_replace('_', ' ', $ucionica[0])}}</td>
                                 <td class="border">
                                     @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'uto' && $rasporedJedanZima[5] === $ucionica[0])
@@ -1405,7 +1405,7 @@
                             @foreach($ucionice as $ucionica)
 @if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
-                                <td class="border font-bold">{{$ucionica[0]}}</td>
+                                <td class="border font-bold">{{str_replace('_', ' ', $ucionica[0])}}</td>
                                 <td class="border">
                                     @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'sri' && $rasporedJedanZima[5] === $ucionica[0])
@@ -1599,7 +1599,7 @@
                             @foreach($ucionice as $ucionica)
 @if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
-                                <td class="border font-bold">{{$ucionica[0]}}</td>
+                                <td class="border font-bold">{{str_replace('_', ' ', $ucionica[0])}}</td>
                                 <td class="border">
                                     @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'cet' && $rasporedJedanZima[5] === $ucionica[0])
@@ -1793,7 +1793,7 @@
                             @foreach($ucionice as $ucionica)
 @if(!Str::contains($ucionica[0], 'Online'))
                             <tr class="bg-gray-100">
-                                <td class="border font-bold">{{$ucionica[0]}}</td>
+                                <td class="border font-bold">{{str_replace('_', ' ', $ucionica[0])}}</td>
                                 <td class="border">
                                     @foreach(${"rasporedLjeto".$ucionica[0]} as $rasporedJedanZima)
                                         @if (($rasporedJedanZima[3] === 8 || ($rasporedJedanZima[3] < 8 && $rasporedJedanZima[4] > 8)) && $rasporedJedanZima[2] === 'pet' && $rasporedJedanZima[5] === $ucionica[0])

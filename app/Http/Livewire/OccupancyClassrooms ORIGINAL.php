@@ -44,6 +44,17 @@ class OccupancyClassrooms extends Component
     public $rasporedZimaIK=[];
     public $rasporedZimaStr_Lab=[];
     public $rasporedZimaTorpedo=[];
+    public $rasporedZimaTorpedo_brodice=[];
+    public $rasporedZimaTorpedo_brodski_elementi=[];
+    public $rasporedZimaTorpedo_elektro_lab=[];
+    public $rasporedZimaTorpedo_motori=[];
+    public $rasporedZimaTorpedo_zavarivanje=[];
+    public $rasporedZimaTorpedo_ucionica_1=[];
+    public $rasporedZimaTorpedo_ucionica_2=[];
+    public $rasporedZimaTorpedo_FRB=[];
+    public $rasporedZimaMaster_Hub_1=[];
+    public $rasporedZimaMaster_Hub_2=[];
+    public $rasporedZimaMaster_Hub_Lab=[];
     public $rasporedLjeto107=[];
     public $rasporedLjeto108=[];
     public $rasporedLjeto207=[];
@@ -79,6 +90,17 @@ class OccupancyClassrooms extends Component
     public $rasporedLjetoIK=[];
     public $rasporedLjetoStr_Lab=[];
     public $rasporedLjetoTorpedo=[];
+    public $rasporedLjetoTorpedo_brodice=[];
+    public $rasporedLjetoTorpedo_brodski_elementi=[];
+    public $rasporedLjetoTorpedo_elektro_lab=[];
+    public $rasporedLjetoTorpedo_motori=[];
+    public $rasporedLjetoTorpedo_zavarivanje=[];
+    public $rasporedLjetoTorpedo_ucionica_1=[];
+    public $rasporedLjetoTorpedo_ucionica_2=[];
+    public $rasporedLjetoTorpedo_FRB=[];
+    public $rasporedLjetoMaster_Hub_1=[];
+    public $rasporedLjetoMaster_Hub_2=[];
+    public $rasporedLjetoMaster_Hub_Lab=[];
     public $ucionice=[];
 
     public function mount()
